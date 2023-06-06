@@ -11,7 +11,7 @@ import SwiftUI
 struct WanAndroid_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
         }
     }
 }
