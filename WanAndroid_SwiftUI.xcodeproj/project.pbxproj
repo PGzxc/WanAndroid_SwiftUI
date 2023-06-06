@@ -3,14 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		F30653422A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30653412A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift */; };
-		F30653442A2DEA5300AEB416 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30653432A2DEA5300AEB416 /* ContentView.swift */; };
 		F30653462A2DEA5500AEB416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30653452A2DEA5500AEB416 /* Assets.xcassets */; };
 		F30653492A2DEA5500AEB416 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */; };
+		F3D56EA22A36CC4D008876F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E972A36CC4D008876F0 /* HomeView.swift */; };
+		F3D56EA32A36CC4D008876F0 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E992A36CC4D008876F0 /* NavigationView.swift */; };
+		F3D56EA42A36CC4D008876F0 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E9B2A36CC4D008876F0 /* TabBarView.swift */; };
+		F3D56EA52A36CC4D008876F0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E9D2A36CC4D008876F0 /* MessageView.swift */; };
+		F3D56EA62A36CC4D008876F0 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E9F2A36CC4D008876F0 /* ProjectView.swift */; };
+		F3D56EA72A36CC4D008876F0 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56EA12A36CC4D008876F0 /* MeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,12 @@
 		F30653432A2DEA5300AEB416 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F30653452A2DEA5500AEB416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3D56E972A36CC4D008876F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F3D56E992A36CC4D008876F0 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		F3D56E9B2A36CC4D008876F0 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		F3D56E9D2A36CC4D008876F0 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		F3D56E9F2A36CC4D008876F0 /* ProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
+		F3D56EA12A36CC4D008876F0 /* MeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +62,7 @@
 		F30653402A2DEA5300AEB416 /* WanAndroid_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				F3D56E952A36CC4D008876F0 /* Content */,
 				F30653412A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift */,
 				F30653432A2DEA5300AEB416 /* ContentView.swift */,
 				F30653452A2DEA5500AEB416 /* Assets.xcassets */,
@@ -65,6 +77,67 @@
 				F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3D56E952A36CC4D008876F0 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				F3D56E962A36CC4D008876F0 /* Home */,
+				F3D56E982A36CC4D008876F0 /* Navigation */,
+				F3D56E9A2A36CC4D008876F0 /* TabBar */,
+				F3D56E9C2A36CC4D008876F0 /* Message */,
+				F3D56E9E2A36CC4D008876F0 /* Project */,
+				F3D56EA02A36CC4D008876F0 /* Me */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		F3D56E962A36CC4D008876F0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F3D56E972A36CC4D008876F0 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F3D56E982A36CC4D008876F0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F3D56E992A36CC4D008876F0 /* NavigationView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F3D56E9A2A36CC4D008876F0 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F3D56E9B2A36CC4D008876F0 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F3D56E9C2A36CC4D008876F0 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F3D56E9D2A36CC4D008876F0 /* MessageView.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F3D56E9E2A36CC4D008876F0 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				F3D56E9F2A36CC4D008876F0 /* ProjectView.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		F3D56EA02A36CC4D008876F0 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				F3D56EA12A36CC4D008876F0 /* MeView.swift */,
+			);
+			path = Me;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,7 +176,7 @@
 				};
 			};
 			buildConfigurationList = F30653392A2DEA5300AEB416 /* Build configuration list for PBXProject "WanAndroid_SwiftUI" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -137,8 +210,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F30653442A2DEA5300AEB416 /* ContentView.swift in Sources */,
+				F3D56EA72A36CC4D008876F0 /* MeView.swift in Sources */,
+				F3D56EA62A36CC4D008876F0 /* ProjectView.swift in Sources */,
 				F30653422A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift in Sources */,
+				F3D56EA32A36CC4D008876F0 /* NavigationView.swift in Sources */,
+				F3D56EA42A36CC4D008876F0 /* TabBarView.swift in Sources */,
+				F3D56EA22A36CC4D008876F0 /* HomeView.swift in Sources */,
+				F3D56EA52A36CC4D008876F0 /* MessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +352,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +381,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
