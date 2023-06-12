@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7820B7C46641BAE347B1747 /* Pods_WanAndroid_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F3D761A3E7D1F239CFB3D1 /* Pods_WanAndroid_SwiftUI.framework */; };
 		F30653422A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30653412A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift */; };
 		F30653462A2DEA5500AEB416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30653452A2DEA5500AEB416 /* Assets.xcassets */; };
 		F30653492A2DEA5500AEB416 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */; };
+		F3BDCCD62A3705B400FC3CCD /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCD52A3705B400FC3CCD /* Storage.swift */; };
+		F3BDCCDB2A37060500FC3CCD /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCDA2A37060500FC3CCD /* ModelProtocol.swift */; };
+		F3BDCCDD2A37063100FC3CCD /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCDC2A37063100FC3CCD /* ArticleModel.swift */; };
+		F3BDCCDF2A37076000FC3CCD /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCDE2A37076000FC3CCD /* UserModel.swift */; };
+		F3BDCCE12A37078F00FC3CCD /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCE02A37078F00FC3CCD /* BannerModel.swift */; };
+		F3BDCCE32A3707B900FC3CCD /* CollectListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCE22A3707B900FC3CCD /* CollectListModel.swift */; };
+		F3BDCCE62A37092F00FC3CCD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCE52A37092F00FC3CCD /* API.swift */; };
+		F3BDCCE82A37094D00FC3CCD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCE72A37094D00FC3CCD /* Router.swift */; };
+		F3BDCCEA2A37096900FC3CCD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCE92A37096900FC3CCD /* APIService.swift */; };
+		F3BDCCED2A370A0800FC3CCD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCEC2A370A0800FC3CCD /* HomeViewModel.swift */; };
 		F3D56EA22A36CC4D008876F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E972A36CC4D008876F0 /* HomeView.swift */; };
 		F3D56EA32A36CC4D008876F0 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E992A36CC4D008876F0 /* NavigationView.swift */; };
 		F3D56EA42A36CC4D008876F0 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E9B2A36CC4D008876F0 /* TabBarView.swift */; };
@@ -19,11 +30,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		947180445A177029C8A76498 /* Pods-WanAndroid_SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WanAndroid_SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-WanAndroid_SwiftUI/Pods-WanAndroid_SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		99F3D761A3E7D1F239CFB3D1 /* Pods_WanAndroid_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WanAndroid_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F19A4684A56256861A63C99B /* Pods-WanAndroid_SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WanAndroid_SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-WanAndroid_SwiftUI/Pods-WanAndroid_SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		F306533E2A2DEA5300AEB416 /* WanAndroid_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WanAndroid_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30653412A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanAndroid_SwiftUIApp.swift; sourceTree = "<group>"; };
 		F30653432A2DEA5300AEB416 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F30653452A2DEA5500AEB416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3BDCCD52A3705B400FC3CCD /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		F3BDCCDA2A37060500FC3CCD /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		F3BDCCDC2A37063100FC3CCD /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		F3BDCCDE2A37076000FC3CCD /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F3BDCCE02A37078F00FC3CCD /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		F3BDCCE22A3707B900FC3CCD /* CollectListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectListModel.swift; sourceTree = "<group>"; };
+		F3BDCCE52A37092F00FC3CCD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F3BDCCE72A37094D00FC3CCD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F3BDCCE92A37096900FC3CCD /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		F3BDCCEC2A370A0800FC3CCD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F3D56E972A36CC4D008876F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F3D56E992A36CC4D008876F0 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		F3D56E9B2A36CC4D008876F0 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -37,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7820B7C46641BAE347B1747 /* Pods_WanAndroid_SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58AF07BC9E521BD05B91793B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F19A4684A56256861A63C99B /* Pods-WanAndroid_SwiftUI.debug.xcconfig */,
+				947180445A177029C8A76498 /* Pods-WanAndroid_SwiftUI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CFBB2B67A6F61AB28CCC1333 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99F3D761A3E7D1F239CFB3D1 /* Pods_WanAndroid_SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F30653352A2DEA5300AEB416 = {
 			isa = PBXGroup;
 			children = (
 				F30653402A2DEA5300AEB416 /* WanAndroid_SwiftUI */,
 				F306533F2A2DEA5300AEB416 /* Products */,
+				58AF07BC9E521BD05B91793B /* Pods */,
+				CFBB2B67A6F61AB28CCC1333 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +106,10 @@
 		F30653402A2DEA5300AEB416 /* WanAndroid_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				F3BDCCE42A37090B00FC3CCD /* api */,
+				F3BDCCD82A3705E500FC3CCD /* model */,
+				F3BDCCD72A3705D600FC3CCD /* viewmodel */,
+				F3BDCCD42A37059800FC3CCD /* utils */,
 				F3D56E952A36CC4D008876F0 /* Content */,
 				F30653412A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift */,
 				F30653432A2DEA5300AEB416 /* ContentView.swift */,
@@ -77,6 +125,59 @@
 				F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3BDCCD42A37059800FC3CCD /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				F3BDCCD52A3705B400FC3CCD /* Storage.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		F3BDCCD72A3705D600FC3CCD /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		F3BDCCD82A3705E500FC3CCD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F3BDCCD92A3705F000FC3CCD /* protocol */,
+				F3BDCCDC2A37063100FC3CCD /* ArticleModel.swift */,
+				F3BDCCDE2A37076000FC3CCD /* UserModel.swift */,
+				F3BDCCE02A37078F00FC3CCD /* BannerModel.swift */,
+				F3BDCCE22A3707B900FC3CCD /* CollectListModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F3BDCCD92A3705F000FC3CCD /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F3BDCCDA2A37060500FC3CCD /* ModelProtocol.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		F3BDCCE42A37090B00FC3CCD /* api */ = {
+			isa = PBXGroup;
+			children = (
+				F3BDCCE52A37092F00FC3CCD /* API.swift */,
+				F3BDCCE72A37094D00FC3CCD /* Router.swift */,
+				F3BDCCE92A37096900FC3CCD /* APIService.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		F3BDCCEB2A37099B00FC3CCD /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				F3BDCCEC2A370A0800FC3CCD /* HomeViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		F3D56E952A36CC4D008876F0 /* Content */ = {
@@ -95,6 +196,7 @@
 		F3D56E962A36CC4D008876F0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F3BDCCEB2A37099B00FC3CCD /* viewmodel */,
 				F3D56E972A36CC4D008876F0 /* HomeView.swift */,
 			);
 			path = Home;
@@ -147,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F306534C2A2DEA5500AEB416 /* Build configuration list for PBXNativeTarget "WanAndroid_SwiftUI" */;
 			buildPhases = (
+				34AACF7405745DE02D6AA668 /* [CP] Check Pods Manifest.lock */,
 				F306533A2A2DEA5300AEB416 /* Sources */,
 				F306533B2A2DEA5300AEB416 /* Frameworks */,
 				F306533C2A2DEA5300AEB416 /* Resources */,
+				5D7FE18513B2E00C3FDF6575 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,18 +309,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34AACF7405745DE02D6AA668 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WanAndroid_SwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D7FE18513B2E00C3FDF6575 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WanAndroid_SwiftUI/Pods-WanAndroid_SwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WanAndroid_SwiftUI/Pods-WanAndroid_SwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WanAndroid_SwiftUI/Pods-WanAndroid_SwiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F306533A2A2DEA5300AEB416 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BDCCED2A370A0800FC3CCD /* HomeViewModel.swift in Sources */,
+				F3BDCCE32A3707B900FC3CCD /* CollectListModel.swift in Sources */,
 				F3D56EA72A36CC4D008876F0 /* MeView.swift in Sources */,
 				F3D56EA62A36CC4D008876F0 /* ProjectView.swift in Sources */,
 				F30653422A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift in Sources */,
+				F3BDCCE12A37078F00FC3CCD /* BannerModel.swift in Sources */,
 				F3D56EA32A36CC4D008876F0 /* NavigationView.swift in Sources */,
+				F3BDCCEA2A37096900FC3CCD /* APIService.swift in Sources */,
+				F3BDCCE62A37092F00FC3CCD /* API.swift in Sources */,
+				F3BDCCE82A37094D00FC3CCD /* Router.swift in Sources */,
+				F3BDCCDB2A37060500FC3CCD /* ModelProtocol.swift in Sources */,
 				F3D56EA42A36CC4D008876F0 /* TabBarView.swift in Sources */,
+				F3BDCCDD2A37063100FC3CCD /* ArticleModel.swift in Sources */,
+				F3BDCCD62A3705B400FC3CCD /* Storage.swift in Sources */,
 				F3D56EA22A36CC4D008876F0 /* HomeView.swift in Sources */,
 				F3D56EA52A36CC4D008876F0 /* MessageView.swift in Sources */,
+				F3BDCCDF2A37076000FC3CCD /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +495,7 @@
 		};
 		F306534D2A2DEA5500AEB416 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F19A4684A56256861A63C99B /* Pods-WanAndroid_SwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -368,6 +525,7 @@
 		};
 		F306534E2A2DEA5500AEB416 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 947180445A177029C8A76498 /* Pods-WanAndroid_SwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
