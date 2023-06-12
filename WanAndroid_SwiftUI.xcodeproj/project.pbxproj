@@ -108,7 +108,6 @@
 			children = (
 				F3BDCCE42A37090B00FC3CCD /* api */,
 				F3BDCCD82A3705E500FC3CCD /* model */,
-				F3BDCCD72A3705D600FC3CCD /* viewmodel */,
 				F3BDCCD42A37059800FC3CCD /* utils */,
 				F3D56E952A36CC4D008876F0 /* Content */,
 				F30653412A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift */,
@@ -133,13 +132,6 @@
 				F3BDCCD52A3705B400FC3CCD /* Storage.swift */,
 			);
 			path = utils;
-			sourceTree = "<group>";
-		};
-		F3BDCCD72A3705D600FC3CCD /* viewmodel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		F3BDCCD82A3705E500FC3CCD /* model */ = {

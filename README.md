@@ -30,5 +30,33 @@
 
 ## 三 开发周期
 
+### 3.1 v1.0
+
+项目主体框架搭建：使用TabView+NavigationStack
+
+- 首页
+- 导航
+- 项目
+- 消息
+- 我的
+
+### 3.2 v2.0
+
+网络请求：
+
+* API：网络接口
+* Router：BaseURL、method、path、params封装
+* APIService：接口实现类(参数、返回model)
+
+Model(数据类):
+
+* 将接口结果快速解析：https://app.quicktype.io
+* 每个解析结果都有：newJSONDecoder、newJSONEncoder，抽取协议ModelProtocol
+
+ViewModel(MVVM设计模式):
+
+* xxxViewModel继承ObservableObject
+* 在xxxViewModel中声明接口返回的Model数据，调用接口返回后接收
+
 
 
