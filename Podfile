@@ -9,5 +9,6 @@ target 'WanAndroid_SwiftUI' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'ProgressHUD', '~> 13.6.2'
+  pod 'SDWebImageSwiftUI'
 
 end

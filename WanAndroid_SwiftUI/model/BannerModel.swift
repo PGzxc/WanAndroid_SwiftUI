@@ -27,9 +27,9 @@ struct BannerModel: Codable ,ModelProtocol{
         return encoder
     }
     
-    let data: [Datum]?
-    let errorCode: Int?
-    let errorMsg: String?
+    let data: [Banner]?
+    let errorCode: Int
+    let errorMsg: String
 }
 
 //
@@ -42,14 +42,14 @@ struct BannerModel: Codable ,ModelProtocol{
 //   }
 
 // MARK: - Datum
-struct Datum: Codable {
-    let desc: String?
-    let id: Int?
-    let imagePath: String?
-    let isVisible, order: Int?
-    let title: String?
-    let type: Int?
-    let url: String?
+struct Banner: Codable,Identifiable,Equatable {
+    let desc: String
+    let id: Int
+    let imagePath: String
+    let isVisible, order: Int
+    let title: String
+    let type: Int
+    let url: String
 }
 
 // MARK: - Helper functions for creating encoders and decoders

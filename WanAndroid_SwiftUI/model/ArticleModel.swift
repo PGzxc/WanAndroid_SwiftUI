@@ -44,7 +44,7 @@ struct ArticleModel: Codable,ModelProtocol {
 // MARK: - ArticleModelData
 struct ArticleModelData: Codable {
     let curPage: Int?
-    let datas: [DataElement]?
+    let datas: [Article]?
     let offset: Int?
     let over: Bool?
     let pageCount, size, total: Int?
@@ -60,7 +60,7 @@ struct ArticleModelData: Codable {
 //   }
 
 // MARK: - DataElement
-struct DataElement: Codable {
+struct Article: Codable,Identifiable,Equatable {
     let adminAdd: Bool?
     let apkLink: String?
     let audit: Int?
@@ -70,7 +70,6 @@ struct DataElement: Codable {
     let chapterName: String?
     let collect: Bool?
     let courseID: Int?
-    let desc: Desc?
     let descMd: String?
     let envelopePic: String?
     let fresh: Bool?
@@ -78,7 +77,7 @@ struct DataElement: Codable {
     let id: Int?
     let isAdminAdd: Bool?
     let link: String?
-    let niceDate, niceShareDate, origin, dataPrefix: String?
+    let desc,niceDate, niceShareDate, origin, dataPrefix: String?
     let projectLink: String?
     let publishTime, realSuperChapterID, selfVisible, shareDate: Int?
     let shareUser: String?
@@ -103,12 +102,9 @@ struct DataElement: Codable {
         case userID = "userId"
         case visible, zan
     }
-}
-
-enum Desc: String, Codable {
-    case android史上更全更完整获取设备信息获取手机唯一标识 = "Android-史上更全、更完整，获取设备信息、获取手机唯一标识"
-    case empty = ""
-    case 小程序版玩安卓 = "小程序版玩安卓"
+    static func ==(lhs: Article, rhs: Article) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 //

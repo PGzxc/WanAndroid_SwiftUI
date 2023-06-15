@@ -11,6 +11,12 @@
 		F30653422A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30653412A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift */; };
 		F30653462A2DEA5500AEB416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30653452A2DEA5500AEB416 /* Assets.xcassets */; };
 		F30653492A2DEA5500AEB416 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */; };
+		F3B87C5B2A3B16CD0072738D /* LoadingWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B87C592A3B16CC0072738D /* LoadingWebView.swift */; };
+		F3B87C5C2A3B16CD0072738D /* PlatformIndependentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B87C5A2A3B16CC0072738D /* PlatformIndependentWebView.swift */; };
+		F3B87C622A3B170D0072738D /* ArticleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B87C5E2A3B170D0072738D /* ArticleCellView.swift */; };
+		F3B87C632A3B170D0072738D /* ArticleCellViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B87C5F2A3B170D0072738D /* ArticleCellViewBuilder.swift */; };
+		F3B87C642A3B170D0072738D /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B87C602A3B170D0072738D /* ImageCarouselView.swift */; };
+		F3B87C652A3B170D0072738D /* ImageCarouseViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B87C612A3B170D0072738D /* ImageCarouseViewBuilder.swift */; };
 		F3BDCCD62A3705B400FC3CCD /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCD52A3705B400FC3CCD /* Storage.swift */; };
 		F3BDCCDB2A37060500FC3CCD /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCDA2A37060500FC3CCD /* ModelProtocol.swift */; };
 		F3BDCCDD2A37063100FC3CCD /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCDC2A37063100FC3CCD /* ArticleModel.swift */; };
@@ -38,6 +44,12 @@
 		F30653432A2DEA5300AEB416 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F30653452A2DEA5500AEB416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3B87C592A3B16CC0072738D /* LoadingWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingWebView.swift; sourceTree = "<group>"; };
+		F3B87C5A2A3B16CC0072738D /* PlatformIndependentWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformIndependentWebView.swift; sourceTree = "<group>"; };
+		F3B87C5E2A3B170D0072738D /* ArticleCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCellView.swift; sourceTree = "<group>"; };
+		F3B87C5F2A3B170D0072738D /* ArticleCellViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCellViewBuilder.swift; sourceTree = "<group>"; };
+		F3B87C602A3B170D0072738D /* ImageCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCarouselView.swift; sourceTree = "<group>"; };
+		F3B87C612A3B170D0072738D /* ImageCarouseViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCarouseViewBuilder.swift; sourceTree = "<group>"; };
 		F3BDCCD52A3705B400FC3CCD /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F3BDCCDA2A37060500FC3CCD /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
 		F3BDCCDC2A37063100FC3CCD /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
@@ -126,6 +138,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F3B87C582A3B16CC0072738D /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F3B87C592A3B16CC0072738D /* LoadingWebView.swift */,
+				F3B87C5A2A3B16CC0072738D /* PlatformIndependentWebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		F3B87C5D2A3B16E20072738D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F3B87C5E2A3B170D0072738D /* ArticleCellView.swift */,
+				F3B87C5F2A3B170D0072738D /* ArticleCellViewBuilder.swift */,
+				F3B87C602A3B170D0072738D /* ImageCarouselView.swift */,
+				F3B87C612A3B170D0072738D /* ImageCarouseViewBuilder.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		F3BDCCD42A37059800FC3CCD /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +207,7 @@
 		F3D56E952A36CC4D008876F0 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				F3B87C582A3B16CC0072738D /* WebView */,
 				F3D56E962A36CC4D008876F0 /* Home */,
 				F3D56E982A36CC4D008876F0 /* Navigation */,
 				F3D56E9A2A36CC4D008876F0 /* TabBar */,
@@ -188,6 +221,7 @@
 		F3D56E962A36CC4D008876F0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F3B87C5D2A3B16E20072738D /* view */,
 				F3BDCCEB2A37099B00FC3CCD /* viewmodel */,
 				F3D56E972A36CC4D008876F0 /* HomeView.swift */,
 			);
@@ -348,19 +382,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B87C652A3B170D0072738D /* ImageCarouseViewBuilder.swift in Sources */,
 				F3BDCCED2A370A0800FC3CCD /* HomeViewModel.swift in Sources */,
 				F3BDCCE32A3707B900FC3CCD /* CollectListModel.swift in Sources */,
 				F3D56EA72A36CC4D008876F0 /* MeView.swift in Sources */,
 				F3D56EA62A36CC4D008876F0 /* ProjectView.swift in Sources */,
 				F30653422A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift in Sources */,
 				F3BDCCE12A37078F00FC3CCD /* BannerModel.swift in Sources */,
+				F3B87C642A3B170D0072738D /* ImageCarouselView.swift in Sources */,
 				F3D56EA32A36CC4D008876F0 /* NavigationView.swift in Sources */,
+				F3B87C622A3B170D0072738D /* ArticleCellView.swift in Sources */,
 				F3BDCCEA2A37096900FC3CCD /* APIService.swift in Sources */,
 				F3BDCCE62A37092F00FC3CCD /* API.swift in Sources */,
 				F3BDCCE82A37094D00FC3CCD /* Router.swift in Sources */,
 				F3BDCCDB2A37060500FC3CCD /* ModelProtocol.swift in Sources */,
 				F3D56EA42A36CC4D008876F0 /* TabBarView.swift in Sources */,
+				F3B87C5C2A3B16CD0072738D /* PlatformIndependentWebView.swift in Sources */,
+				F3B87C5B2A3B16CD0072738D /* LoadingWebView.swift in Sources */,
 				F3BDCCDD2A37063100FC3CCD /* ArticleModel.swift in Sources */,
+				F3B87C632A3B170D0072738D /* ArticleCellViewBuilder.swift in Sources */,
 				F3BDCCD62A3705B400FC3CCD /* Storage.swift in Sources */,
 				F3D56EA22A36CC4D008876F0 /* HomeView.swift in Sources */,
 				F3D56EA52A36CC4D008876F0 /* MessageView.swift in Sources */,

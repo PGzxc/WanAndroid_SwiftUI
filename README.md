@@ -47,6 +47,7 @@
 * API：网络接口
 * Router：BaseURL、method、path、params封装
 * APIService：接口实现类(参数、返回model)
+* token认证：登录完成后，将token保存到AppStorage中，请求时读取AppStorage中的数据设置到cookie上
 
 Model(数据类):
 
@@ -57,6 +58,22 @@ ViewModel(MVVM设计模式):
 
 * xxxViewModel继承ObservableObject
 * 在xxxViewModel中声明接口返回的Model数据，调用接口返回后接收
+
+### v3.0-首页
+
+#### 使用到的类库
+
+* 轮播图：[ImageCarousel](https://github.com/jisungs/ImageCarousel)
+* 网页：[WebViewProject-LoadingWebView](https://github.com/gahntpo/WebViewProject)
+* 网络图片：[SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI)
+
+#### 功能开发
+
+* 自定义视图
+* NavigationLink导航
+* view抽取
+
+
 
 
 
