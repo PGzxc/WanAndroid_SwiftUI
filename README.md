@@ -59,15 +59,20 @@ ViewModel(MVVM设计模式):
 * xxxViewModel继承ObservableObject
 * 在xxxViewModel中声明接口返回的Model数据，调用接口返回后接收
 
+使用到的类库：
+
+* [Alamofire](https://github.com/Alamofire/Alamofire)：网络请求
+* [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper)：Alamofire的扩展，它使用ObjectMapper自动将JSON响应数据转换为swift对象
+
 ### v3.0-首页
 
-#### 使用到的类库
+使用到的类库
 
 * 轮播图：[ImageCarousel](https://github.com/jisungs/ImageCarousel)
 * 网页：[WebViewProject-LoadingWebView](https://github.com/gahntpo/WebViewProject)
 * 网络图片：[SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI)
 
-#### 功能开发
+功能开发
 
 * 自定义视图
 * NavigationLink导航
