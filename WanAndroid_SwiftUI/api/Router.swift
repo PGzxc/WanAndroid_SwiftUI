@@ -16,6 +16,7 @@ internal extension APIService{
         case homeBanner //首页轮播图
         case login(String,String) //用户登录
         case collectList(Int?)
+        case tree //体系
        
 
         var baseURL: URL {
@@ -28,6 +29,7 @@ internal extension APIService{
             case .homeArticleList: return .get
             case .login: return .post
             case .collectList: return .get
+            case .tree: return .get
                 
             }
         }
@@ -38,6 +40,7 @@ internal extension APIService{
             case .homeArticleList(let page): return String(format:API.homeArticleList, page ?? 0)
             case .login(_, _): return API.login
             case .collectList(let index):return String(format: API.collectList, index ?? 0)
+            case .tree: return API.treeList
             }
         }
         
@@ -48,6 +51,7 @@ internal extension APIService{
                 case .login(let username, let password):
                     return ["username":username,"password":password]
                 case .collectList: return nil
+                case .tree: return nil
                 }
             }
 

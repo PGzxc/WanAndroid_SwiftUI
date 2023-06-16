@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct NavigationView: View {
+    
+    @StateObject private var vm: NavigationViewModel = NavigationViewModel()
+    
     var body: some View {
-        Text("NavigationView")
+        
+        NavigationSectionBuilder(vm: .constant(vm))
+            .onAppear(){vm.getTreeModel()}
+        
     }
-}
-
-struct NavigationView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView()
+    
+    struct NavigationView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView()
+        }
     }
 }

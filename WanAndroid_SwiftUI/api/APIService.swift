@@ -79,6 +79,20 @@ struct APIService {
             }
         }
     }
+    
+    //体系
+    func getTree(completion:@escaping (TreeModel?, Error?)->()){
+        Alamofire.request(Router.tree).responseTreeModel{(response: DataResponse<TreeModel>) in
+            if let error = response.error{
+                completion(nil,error)
+                return
+            }
+            if let tree = response.result.value {
+                completion(tree,nil)
+                return
+            }
+        }
+    }
 }
 
 

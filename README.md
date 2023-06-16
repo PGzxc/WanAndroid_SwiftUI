@@ -78,7 +78,12 @@ ViewModel(MVVM设计模式):
 * NavigationLink导航
 * view抽取
 
+### v4.0-导航
 
+使用到的组件
+
+* Section：列表分组
+* LazyVGrid：网格布局
 
 
 
