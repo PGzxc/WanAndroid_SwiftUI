@@ -112,7 +112,7 @@ struct API {
       ///     - 页码：拼接在链接中，从1开始
       ///******************************************************************/
 
-    static var projectArticleList = "/project/list/%s/json?cid=%s";
+    static var projectArticleList = "/project/list/%d/json";
 
       ///5- 登陆与注册
 

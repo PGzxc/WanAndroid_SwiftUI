@@ -10,7 +10,7 @@ import Alamofire
 
 
 struct APIService {
-
+    
     //MARK: - Singleton
     static let instance = APIService()
     
@@ -32,7 +32,7 @@ struct APIService {
     }
     
     func getArticle(with page: Int,completion:@escaping (ArticleModel?, Error?)->()){
-      
+        
         Alamofire.request(Router.homeArticleList(page)).responseArticleModel{(response: DataResponse<ArticleModel>) in
             
             if let error = response.error{
@@ -68,7 +68,7 @@ struct APIService {
     func getCollectList(with index: Int,completion:@escaping (CollectListModel?, Error?)->()){
         
         Alamofire.request(Router.collectList(index)).responseCollectListModel{(response:DataResponse<CollectListModel>) in
-        
+            
             if let error = response.error{
                 completion(nil,error)
                 return
@@ -93,6 +93,34 @@ struct APIService {
             }
         }
     }
+    //项目
+    func getProject(completion:@escaping (ProjectModel?, Error?)->()){
+        Alamofire.request(Router.project).responseProjectModel{(response: DataResponse<ProjectModel>) in
+            if let error = response.error{
+                completion(nil,error)
+                return
+            }
+            if let projectmodel = response.result.value {
+                completion(projectmodel,nil)
+                return
+            }
+        }
+    }
+    //项目-子-文章
+    func getProjectArticle(with page: Int, andWith cid:Int,completion:@escaping (ProjectSonModel?, Error?)->()){
+        Alamofire.request(Router.projectArticle(page, cid)).responseProjectSonModel{(response: DataResponse<ProjectSonModel>) in
+            if let error = response.error{
+                completion(nil,error)
+                return
+            }
+            if let projectSonModel = response.result.value {
+                completion(projectSonModel,nil)
+                return
+            }
+        }
+    }
+    
+    
 }
 
 
