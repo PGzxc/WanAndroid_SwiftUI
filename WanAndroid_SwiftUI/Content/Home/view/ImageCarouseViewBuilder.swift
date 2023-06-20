@@ -13,9 +13,11 @@ struct ImageCarouseViewBuilder: View {
     @Binding var vm: HomeViewModel
     @State private var goToNewView: Bool = false
     @State var banner:Banner? = nil
+    @State var isModalPresented = false
+    
     
     var body: some View {
-        
+    
         let bannerDatas = vm.bannerModel?.data
         if(bannerDatas != nil){
             
@@ -26,49 +28,23 @@ struct ImageCarouseViewBuilder: View {
                         .scaledToFill()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: UIScreen.main.bounds.width,height: 250)
-                        .clipped().onTapGesture {
+                        .clipped()
+                        .onTapGesture {
                             self.banner = banner
-                            self.goToNewView.toggle()
+                            self.isModalPresented.toggle()
+                            //self.goToNewView.toggle()
+                        }
+                        .sheet(isPresented: $isModalPresented){
+                            LoadingWebView(url: URL(string: self.banner?.url ?? ""))
                         }
                     
                 }
             }.frame(width: UIScreen.main.bounds.width, height: 250, alignment: .center)
+            
         }
         
         NavigationLink(destination: LoadingWebView(url: URL(string: self.banner?.url ?? "")), isActive: self.$goToNewView) { EmptyView() }
-        
-        
-        
-        //NavigationView {
-        //        GeometryReader { geometry in
-        //            var datas =  vm.bannerModel?.data?.compactMap({ Banner in
-        //                Banner.imagePath
-        //
-        //
-        //            })
-        //            let dattt = vm.bannerModel?.data
-        //
-        //            if(datas != nil){
-        //                NavigationLink(destination: LoadingWebView(url: URL(string: "https://www.baidu.com")), label: {
-        //                    ImageCarouselView(numberOfImages: datas!.count) {
-        //                        ForEach(datas!,id: \.self){ imagePath in
-        //
-        //                            AnimatedImage(url: URL(string: imagePath))
-        //                                .resizable()
-        //                                .scaledToFill()
-        //                                .aspectRatio(contentMode: .fit)
-        //                                .frame(width: geometry.size.width, height: geometry.size.height)
-        //                                .clipped()
-        //
-        //                        }
-        //                    }
-        //                })
-        //            }
-        //
-        //        }.frame(width: UIScreen.main.bounds.width, height: 250, alignment: .center)
     }
-    //}
-    
 }
 
 struct ImageCarouseViewBuilder_Previews: PreviewProvider {

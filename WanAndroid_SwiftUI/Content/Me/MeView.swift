@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MeView: View {
+    @StateObject private var vm: MeViewModel = MeViewModel()
     var body: some View {
-        Text("MeView")
+        MeBuilder(vm: .constant(vm))
     }
 }
 

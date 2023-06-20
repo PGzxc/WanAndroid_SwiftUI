@@ -19,6 +19,7 @@ internal extension APIService{
         case tree //体系
         case project //项目
         case projectArticle(Int?,Int) //项目文章
+        case coinUserInfo //积分-用户信息-使用token
         
         
         var baseURL: URL {
@@ -34,6 +35,7 @@ internal extension APIService{
             case .tree: return .get
             case .project: return .get
             case .projectArticle: return .get
+            case .coinUserInfo: return .get
                 
             }
         }
@@ -47,6 +49,7 @@ internal extension APIService{
             case .tree: return API.treeList
             case .project: return API.projectTreeList
             case .projectArticle(let page,_): return String(format: API.projectArticleList, page ?? 0)
+            case .coinUserInfo: return API.coinUserInfo
             }
         }
         
@@ -60,6 +63,7 @@ internal extension APIService{
             case .tree: return nil
             case .project: return nil
             case .projectArticle(_,let cid): return ["cid":cid]
+            case .coinUserInfo: return nil
             }
         }
         

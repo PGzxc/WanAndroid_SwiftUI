@@ -12,5 +12,7 @@ public class Storage: ObservableObject {
     public static let shared = Storage()
     
     @AppStorage("setCookie") public var setCookie = ""
+    @AppStorage("isLogin") public var isLogin = false
+    @AppStorage("userName") public var userName = ""
      
 }

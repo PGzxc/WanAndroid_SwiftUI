@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WanAndroid_SwiftUIApp: App {
+    let loginViewModel:LoginViewModel = LoginViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            TabBarView().environmentObject(loginViewModel)
         }
     }
 }

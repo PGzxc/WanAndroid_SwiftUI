@@ -119,7 +119,19 @@ struct APIService {
             }
         }
     }
-    
+    //用户信息
+    func getCoinUserInfo(completion:@escaping (CoinUserInfoModel?, Error?)->()){
+        Alamofire.request(Router.coinUserInfo).responseCoinUserInfoModel{(response: DataResponse<CoinUserInfoModel>) in
+            if let error = response.error{
+                completion(nil,error)
+                return
+            }
+            if let userInfoModel = response.result.value {
+                completion(userInfoModel,nil)
+                return
+            }
+        }
+    }
     
 }
 

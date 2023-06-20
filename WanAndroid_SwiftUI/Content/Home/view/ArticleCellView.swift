@@ -13,10 +13,18 @@ struct ArticleCellView: View{
     
     @Binding var article:Article
     @State private var goToNewView: Bool = false
+    @State var isModalPresented = false
     
     var body: some View{
         
-        NavigationLink(destination: LoadingWebView(url: URL(string: article.link ?? "")), label: { articleView  })
+        articleView.onTapGesture {
+            self.isModalPresented.toggle()
+        } .sheet(isPresented: $isModalPresented){
+            LoadingWebView(url: URL(string: article.link ?? ""))
+        }
+        
+        
+        //NavigationLink(destination: LoadingWebView(url: URL(string: article.link ?? "")), label: { articleView  })
         
     }
     

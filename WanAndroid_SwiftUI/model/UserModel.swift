@@ -42,7 +42,7 @@ struct UserModel: Codable ,ModelProtocol{
         return encoder
     }
     
-    let data: DataClass?
+    let data: User?
     let errorCode: Int?
     let errorMsg: String?
 }
@@ -57,16 +57,16 @@ struct UserModel: Codable ,ModelProtocol{
 //   }
 
 // MARK: - DataClass
-struct DataClass: Codable {
-    let admin: Bool?
+struct User: Codable,Identifiable {
+    let admin: Bool
     let chapterTops: [JSONAny]?
-    let coinCount: Int?
-    let collectIDS: [Int]?
-    let email, icon: String?
-    let id: Int?
-    let nickname, password, publicName, token: String?
-    let type: Int?
-    let username: String?
+    let coinCount: Int
+    let collectIDS: [Int]
+    let email, icon: String
+    let id: Int
+    let nickname, password, publicName, token: String
+    let type: Int
+    let username: String
 
     enum CodingKeys: String, CodingKey {
         case admin, chapterTops, coinCount
