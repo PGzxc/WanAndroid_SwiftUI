@@ -20,6 +20,8 @@ internal extension APIService{
         case project //项目
         case projectArticle(Int?,Int) //项目文章
         case coinUserInfo //积分-用户信息-使用token
+        case messageUnRead(Int?) //消息-未读
+        case messageRead(Int?) //消息-已读
         
         
         var baseURL: URL {
@@ -36,6 +38,8 @@ internal extension APIService{
             case .project: return .get
             case .projectArticle: return .get
             case .coinUserInfo: return .get
+            case .messageUnRead: return .get
+            case .messageRead: return .get
                 
             }
         }
@@ -50,6 +54,9 @@ internal extension APIService{
             case .project: return API.projectTreeList
             case .projectArticle(let page,_): return String(format: API.projectArticleList, page ?? 0)
             case .coinUserInfo: return API.coinUserInfo
+            case .messageUnRead(let page): return String(format: API.messageUnReadList, page ?? 1)
+            case .messageRead(let page): return String(format: API.messageReadList, page ?? 1)
+                
             }
         }
         
@@ -64,6 +71,9 @@ internal extension APIService{
             case .project: return nil
             case .projectArticle(_,let cid): return ["cid":cid]
             case .coinUserInfo: return nil
+            case .messageUnRead: return nil
+            case .messageRead: return nil
+                
             }
         }
         

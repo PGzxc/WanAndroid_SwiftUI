@@ -404,14 +404,14 @@ struct API {
       /// 方法: GET
       /// 参数：
       ///******************************************************************/
-    static var messageReadList = "/message/lg/readed_list/%s/json";
+    static var messageReadList = "/message/lg/readed_list/%d/json";
 
       /// ******************14.3 未读消息列表 ****************
       /// 示例：https://wanandroid.com/message/lg/unread_list/页码/json
       /// 方法: GET
       /// 参数：
       ///******************************************************************/
-    static var messageUnReadList = "/message/lg/unread_list/%s/json";
+    static var messageUnReadList = "/message/lg/unread_list/%d/json";
 
       ///15- 公众号
 

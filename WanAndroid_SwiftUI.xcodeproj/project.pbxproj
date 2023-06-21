@@ -46,6 +46,14 @@
 		F3DA09072A40A06C0089A7A6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA09062A40A06C0089A7A6 /* LoginViewModel.swift */; };
 		F3DA09092A41655F0089A7A6 /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA09082A41655F0089A7A6 /* MeViewModel.swift */; };
 		F3DA090B2A419EC30089A7A6 /* CoinUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA090A2A419EC30089A7A6 /* CoinUserInfoModel.swift */; };
+		F3DA09102A41F2490089A7A6 /* MessageUnReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA090F2A41F2490089A7A6 /* MessageUnReadView.swift */; };
+		F3DA09122A41F2590089A7A6 /* MessageReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA09112A41F2590089A7A6 /* MessageReadView.swift */; };
+		F3DA09142A41F4A00089A7A6 /* MessageUnReadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA09132A41F4A00089A7A6 /* MessageUnReadViewModel.swift */; };
+		F3DA09162A41F4B00089A7A6 /* MessageReadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA09152A41F4B00089A7A6 /* MessageReadViewModel.swift */; };
+		F3DA09182A41F5830089A7A6 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA09172A41F5830089A7A6 /* MessageModel.swift */; };
+		F3DA091D2A4203670089A7A6 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA091C2A4203670089A7A6 /* MessageItemView.swift */; };
+		F3DA091F2A4207530089A7A6 /* MessageItemReadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA091E2A4207530089A7A6 /* MessageItemReadBuilder.swift */; };
+		F3DA09212A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA09202A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +100,14 @@
 		F3DA09062A40A06C0089A7A6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F3DA09082A41655F0089A7A6 /* MeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewModel.swift; sourceTree = "<group>"; };
 		F3DA090A2A419EC30089A7A6 /* CoinUserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinUserInfoModel.swift; sourceTree = "<group>"; };
+		F3DA090F2A41F2490089A7A6 /* MessageUnReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUnReadView.swift; sourceTree = "<group>"; };
+		F3DA09112A41F2590089A7A6 /* MessageReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReadView.swift; sourceTree = "<group>"; };
+		F3DA09132A41F4A00089A7A6 /* MessageUnReadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUnReadViewModel.swift; sourceTree = "<group>"; };
+		F3DA09152A41F4B00089A7A6 /* MessageReadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReadViewModel.swift; sourceTree = "<group>"; };
+		F3DA09172A41F5830089A7A6 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		F3DA091C2A4203670089A7A6 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
+		F3DA091E2A4207530089A7A6 /* MessageItemReadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemReadBuilder.swift; sourceTree = "<group>"; };
+		F3DA09202A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemUnReadBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +236,7 @@
 				F39290312A3D961D00DCCFC9 /* ProjectModel.swift */,
 				F39290392A3DF6D200DCCFC9 /* ProjectSonModel.swift */,
 				F3DA090A2A419EC30089A7A6 /* CoinUserInfoModel.swift */,
+				F3DA09172A41F5830089A7A6 /* MessageModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -296,6 +313,9 @@
 		F3D56E9C2A36CC4D008876F0 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				F3DA09192A41FF9E0089A7A6 /* component */,
+				F3DA090E2A41EF2C0089A7A6 /* viewmodel */,
+				F3DA090C2A41EF210089A7A6 /* view */,
 				F3D56E9D2A36CC4D008876F0 /* MessageView.swift */,
 			);
 			path = Message;
@@ -377,6 +397,34 @@
 				F3DA09062A40A06C0089A7A6 /* LoginViewModel.swift */,
 			);
 			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		F3DA090C2A41EF210089A7A6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F3DA090F2A41F2490089A7A6 /* MessageUnReadView.swift */,
+				F3DA09112A41F2590089A7A6 /* MessageReadView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F3DA090E2A41EF2C0089A7A6 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				F3DA09132A41F4A00089A7A6 /* MessageUnReadViewModel.swift */,
+				F3DA09152A41F4B00089A7A6 /* MessageReadViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		F3DA09192A41FF9E0089A7A6 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				F3DA091C2A4203670089A7A6 /* MessageItemView.swift */,
+				F3DA091E2A4207530089A7A6 /* MessageItemReadBuilder.swift */,
+				F3DA09202A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift */,
+			);
+			path = component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,17 +543,24 @@
 			files = (
 				F3DA09052A40A05A0089A7A6 /* LoginBuilder.swift in Sources */,
 				F39290362A3D975800DCCFC9 /* ProjectViewModel.swift in Sources */,
+				F3DA09162A41F4B00089A7A6 /* MessageReadViewModel.swift in Sources */,
 				F3DA08FE2A3FE9E80089A7A6 /* MeBuilder.swift in Sources */,
+				F3DA09182A41F5830089A7A6 /* MessageModel.swift in Sources */,
 				F3D5EE152A3C5687000ACDFF /* NavigationViewModel.swift in Sources */,
 				F39290382A3D9C4100DCCFC9 /* ProjectBuilder.swift in Sources */,
 				F3B87C652A3B170D0072738D /* ImageCarouseViewBuilder.swift in Sources */,
 				F3BDCCED2A370A0800FC3CCD /* HomeViewModel.swift in Sources */,
 				F3D5EE172A3C5748000ACDFF /* TreeModel.swift in Sources */,
 				F3BDCCE32A3707B900FC3CCD /* CollectListModel.swift in Sources */,
+				F3DA09102A41F2490089A7A6 /* MessageUnReadView.swift in Sources */,
+				F3DA091D2A4203670089A7A6 /* MessageItemView.swift in Sources */,
 				F3D56EA72A36CC4D008876F0 /* MeView.swift in Sources */,
 				F3DA09072A40A06C0089A7A6 /* LoginViewModel.swift in Sources */,
+				F3DA09142A41F4A00089A7A6 /* MessageUnReadViewModel.swift in Sources */,
 				F3D56EA62A36CC4D008876F0 /* ProjectView.swift in Sources */,
 				F30653422A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift in Sources */,
+				F3DA091F2A4207530089A7A6 /* MessageItemReadBuilder.swift in Sources */,
+				F3DA09212A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift in Sources */,
 				F3BDCCE12A37078F00FC3CCD /* BannerModel.swift in Sources */,
 				F3B87C642A3B170D0072738D /* ImageCarouselView.swift in Sources */,
 				F3D56EA32A36CC4D008876F0 /* NavigationView.swift in Sources */,
@@ -528,6 +583,7 @@
 				F3D56EA22A36CC4D008876F0 /* HomeView.swift in Sources */,
 				F3D56EA52A36CC4D008876F0 /* MessageView.swift in Sources */,
 				F3DA09032A403FCB0089A7A6 /* LoginView.swift in Sources */,
+				F3DA09122A41F2590089A7A6 /* MessageReadView.swift in Sources */,
 				F3BDCCDF2A37076000FC3CCD /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

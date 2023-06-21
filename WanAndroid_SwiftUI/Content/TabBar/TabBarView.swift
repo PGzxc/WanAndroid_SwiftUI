@@ -37,7 +37,8 @@ struct TabBarView: View {
             }.tabItem {
                 Image(systemName: "bell")
                 Text("消息")
-            }.badge(1)
+            }
+            //.badge(1)
             
             NavigationStack{
                 MeView()

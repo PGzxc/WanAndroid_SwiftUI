@@ -132,7 +132,37 @@ struct APIService {
             }
         }
     }
+    //消息-未读
+    func getMessageUnRead(with page: Int,completion:@escaping (MessageModel?, Error?)->()){
+        
+        Alamofire.request(Router.messageUnRead(page)).responseMessageModel{(response: DataResponse<MessageModel>) in
+            
+            if let error = response.error{
+                completion(nil,error)
+                return
+            }
+            if let messageModel = response.result.value {
+                completion(messageModel,nil)
+                return
+            }
+        }
+    }
     
+    //消息-已读
+    func getMessageRead(with page: Int,completion:@escaping (MessageModel?, Error?)->()){
+        
+        Alamofire.request(Router.messageRead(page)).responseMessageModel{(response: DataResponse<MessageModel>) in
+            
+            if let error = response.error{
+                completion(nil,error)
+                return
+            }
+            if let messageModel = response.result.value {
+                completion(messageModel,nil)
+                return
+            }
+        }
+    }
 }
 
 
