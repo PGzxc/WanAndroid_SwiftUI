@@ -131,3 +131,30 @@ ViewModel(MVVM设计模式):
 * 消息-已读
 * 消息 -未读
 * 消息item(点击)-详情页
+
+## 四 开发任务
+
+### 4.1 已完成
+
+接口：
+
+* 首页-轮播图：homeBanner
+* 首页-文章列表 ：homeArticleList
+* 导航：tree
+* 项目：project
+* 项目文章：projectArticle
+* 消息-未读：messageUnRead
+* 消息-已读：messageRead
+* 用户登录：login
+* 积分-用户信息:coinUserInfo
+
+### 4.2 未完成
+
+功能开发：
+
+* 上拉刷新、下拉加载
+* 没网、错误信息显示、错误点击重新加载
+
+接口：
+
+* 剩余接口
