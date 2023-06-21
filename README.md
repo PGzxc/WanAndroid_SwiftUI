@@ -1,17 +1,15 @@
 # WanAndroid_SwiftUI
-
-## 一 开发环境
-
-* macOS：13.4
-* Xcode：14.3.1
-* Swift：5.8.1
-
 项目预览
 |![][swift-waz-1]| ![][swift-waz-2]|![][swift-waz-3] |![][swift-waz-4]|
 | -------------- | --------------- | --------------  | -------------- |
 |![][swift-waz-5]|![][swift-waz-6] |![][swift-waz-7] |![][swift-waz-8]|
 |![][swift-waz-9]|![][swift-waz-10]|![][swift-waz-11]|                |
 
+## 一 开发环境
+
+* macOS：13.4
+* Xcode：14.3.1
+* Swift：5.8.1
 
 ## 二 开发说明
 
