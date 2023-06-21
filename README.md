@@ -3,8 +3,15 @@
 ## 一 开发环境
 
 * macOS：13.4
-* Xcode：
+* Xcode：14.3.1
 * Swift：5.8.1
+
+项目预览
+|![][swift-waz-1]| ![][swift-waz-2]|![][swift-waz-3] |![][swift-waz-4]|
+| -------------- | --------------- | --------------  | -------------- |
+|![][swift-waz-5]|![][swift-waz-6] |![][swift-waz-7] |![][swift-waz-8]|
+|![][swift-waz-9]|![][swift-waz-10]|![][swift-waz-11]|                |
+
 
 ## 二 开发说明
 
@@ -163,3 +170,16 @@ ViewModel(MVVM设计模式):
 
 * 本项目按照：接口(API)+视图(组件、布局)+逻辑处理(ViewModel)+接口返回数据(Model)的模式进行开发
 * swiftUI练手项目，可能存在代码不规范等错误，如有错误还望指正
+
+
+[swift-waz-1]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-home-1.png
+[swift-waz-2]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-detail-2.png
+[swift-waz-3]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-navigator-3.png
+[swift-waz-4]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-project-4.png
+[swift-waz-5]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-message-unread-5.png
+[swift-waz-6]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-message-read-6.png
+[swift-waz-7]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-message-info-7.png
+[swift-waz-8]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-me-info-8.png
+[swift-waz-9]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-me-info-no-9.png
+[swift-waz-10]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-login-10.png
+[swift-waz-11]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-register-11.png
