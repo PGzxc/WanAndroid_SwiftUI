@@ -10,17 +10,18 @@ import SwiftUI
 struct ProjectBuilder: View {
     
     @Binding var vm: ProjectViewModel
+    @State  var selectedOptionIndex = 0
+    
     
     var body: some View {
         
         VStack(alignment: .center){
             
             ScrollView{
-                
                 //1-导航栏
-                //pickView
+                pickView
                 //文章
-                //articleView()
+                articleView
                 
             }
         }
@@ -28,36 +29,57 @@ struct ProjectBuilder: View {
     
     var pickView: some View{
         ScrollView(.horizontal){
-            HStack(spacing: 0){
-                Picker("Options",selection: $vm.options.first ?? $vm.options_first){
+//            if vm.options.isEmpty{
+//                Text("Loading")
+//            }else   {
+                HStack(spacing: 0){
                     
-                    ForEach(vm.options,id: \.self) { option in
-                        Text(option).onAppear(){
-                            vm.getProjectTreeArticle(page: 1, cid: vm.optionsDic[option] ?? 0)
+                    Picker("Options",selection: $selectedOptionIndex){
+                        ForEach(0..<vm.options.count,id: \.self){ index in
+                            Text(vm.options[index]).tag(index)
                         }
+                    } .pickerStyle(SegmentedPickerStyle())
+                        .shadow(color: .white, radius: 100)
+                        .shadow(color: Color.brown.opacity(0.8), radius: 5, x: 0, y: 2)
+                        .padding()
+                }.onReceive([self.selectedOptionIndex].publisher.first()) { value in
+                    // 当选择值发生变化时执行操作
+                    if(!vm.options.isEmpty ){
+                        var option = vm.options[value]
+                        vm.getProjectTreeArticle(page: 1, cid: vm.optionsDic[option] ?? 0)
+                        print("Selected option: \(value)")
                     }
-                    
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .shadow(color: .white, radius: 100)
-                .shadow(color: Color.brown.opacity(0.8), radius: 5, x: 0, y: 2)
-                .padding()
-            }
         }
         
     }
     
     var articleView: some View{
+        
         ScrollView{
-            ForEach(vm.options,id: \.self) { option in
-                let articleList  = vm.projectDictionArticleDataList[vm.optionsDic[option]!]
+            if(!vm.options.isEmpty){
+                //var bb = self.selectedOptionIndex
+                let name = vm.options[self.selectedOptionIndex]
+                let articleList  = vm.projectDictionArticleDataList[vm.optionsDic[name]!]
                 if(articleList != nil){
                     ForEach(articleList!){ article in
                         ArticleCellView(article: .constant(article))
                     }
                 }
             }
+            
         }
+        
+        //        ScrollView{
+        //            ForEach(vm.options,id: \.self) { option in
+        //                let articleList  = vm.projectDictionArticleDataList[vm.optionsDic[option]!]
+        //                if(articleList != nil){
+        //                    ForEach(articleList!){ article in
+        //                        ArticleCellView(article: .constant(article))
+        //                    }
+        //                }
+        //            }
+        //        }
         
     }
 }

@@ -16,6 +16,7 @@ class ProjectViewModel:ObservableObject{
     var optionsDic:Dictionary<String,Int> = [:]
     var options:[String] = []
     var options_first: String = ""
+    var selectedOptionIndex = 0 //用于存储选中的选项索引
     
     init(){
         
