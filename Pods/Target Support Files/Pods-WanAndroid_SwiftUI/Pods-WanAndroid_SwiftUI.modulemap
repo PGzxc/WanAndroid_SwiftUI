@@ -1,6 +1,0 @@
-framework module Pods_WanAndroid_SwiftUI {
-  umbrella header "Pods-WanAndroid_SwiftUI-umbrella.h"
-
-  export *
-  module * { export * }
-}
