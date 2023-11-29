@@ -1,39 +1,42 @@
 # WanAndroid_SwiftUI
-项目预览
+
+
+
+## 一 项目预览
 |![][swift-waz-1]| ![][swift-waz-2]|![][swift-waz-3] |![][swift-waz-4]|
 | -------------- | --------------- | --------------  | -------------- |
 |![][swift-waz-5]|![][swift-waz-6] |![][swift-waz-7] |![][swift-waz-8]|
 |![][swift-waz-9]|![][swift-waz-10]|![][swift-waz-11]|                |
 
-## 一 开发环境
+## 二 开发环境
 
 * macOS：13.4
 * Xcode：14.3.1
 * Swift：5.8.1
 
-## 二 开发说明
+## 三 新手入门(准备工作)
 
-### 2.1 学习
+### 3.1 学习任务
 
-#### Swift 5.x—倍速一天看完
+#### Swift 5.x
 
 * 链接地址：https://bilibili.com/video/BV144411C7Gg
 * 掌握程度：swift语法
 
 #### SwiftUI部分
 
-* [Nick Sarno-SwiftUI62集入门 基础部分](https://bilibili.com/video/BV1KY411f7in)(倍速一天看完—布局、组件、动画等)
-* [Nick Sarno-SwiftUI高级教程](https://bilibili.com/video/BV13341117BR)(倍速一天看完—数据封装、网络请求、数据监听、View封装等)
+* [Nick Sarno-SwiftUI62集入门 基础部分](https://bilibili.com/video/BV1KY411f7in)(布局、组件、动画等)
+* [Nick Sarno-SwiftUI高级教程](https://bilibili.com/video/BV13341117BR)(数据封装、网络请求、数据监听、View封装等)
 
 #### Swift项目
 
 * [Nick Sarno-SwiftUI CXrypto App教程](https://bilibili.com/video/BV1xP4y1t7Aj)半天(数据封装、网络请求、View封装等)
 
-### 2.2 实践-利用wanandroid-api开发一个应用
+### 3.2 实践-利用wanandroid-api开发一个应用
 
 * [WanAndroid](https://wanandroid.com)
 
-## 三 开发周期
+## 四 开发周期
 
 ###  v1.0
 
@@ -56,7 +59,7 @@
 
 Model(数据类):
 
-* 将接口结果快速解析：https://app.quicktype.io
+* 将接口结果快速解析(可以封装返回实体Bean的扩展)：https://app.quicktype.io
 * 每个解析结果都有：newJSONDecoder、newJSONEncoder，抽取协议ModelProtocol
 
 ViewModel(MVVM设计模式):
@@ -98,19 +101,15 @@ ViewModel(MVVM设计模式):
 
 功能开发
 
-*  1-导航菜单
+1-导航菜单
 
-> 调用项目分类接口，展示导航菜单(每个菜单有一个对应id，作为cid，获取项目列表数据
-> 定义一个字典，一个存储项目名称，另一个存储对应id(cid)，在项目分类接口完成后设置
+* 调用项目分类接口，展示导航菜单(每个菜单有一个对应id，作为cid，获取项目列表数据
+* 定义一个字典，一个存储项目名称，另一个存储对应id(cid)，在项目分类接口完成后设置
 
-* 2-菜单下的文章
+2-菜单下的文章
 
-> 点击导航菜单时，从字典中取出对应的cid，获取项目列表数据
-> 定义一个字典，一个存储cid，一个存储文章列表\<Article>，在项目列表数据接口完成后设置
-
-未完成
-
-* 所有的数据都放在了第一个菜单下(待解决)
+* 点击导航菜单时，从字典中取出对应的cid，获取项目列表数据
+* 定义一个字典，一个存储cid，一个存储文章列表\<Article>，在项目列表数据接口完成后设置
 
 ### v6.0-登录、注册、我的信息
 
@@ -137,18 +136,19 @@ ViewModel(MVVM设计模式):
 * 消息 -未读
 * 消息item(点击)-详情页
 
-### v8.0-项目(点击标签切换到对应的视图—修改v5.0bug)
+### v8.0-项目—点击标签切换到对应的视图
 
+* 点击标签切换到对应的视图
 * 通过onReceive方法，监听标签的切换，显示相应的视图
 
-### v9.0
+### v9.0-实体类封装及界面显示
 
 * 数据实体类(bean)由quicktype.io生成改为AlamofireObjectMapper
 * 解决能够接收到数据，页面无法显示问题
 
-## 四 开发任务
+## 五 开发任务
 
-### 4.1 已完成
+### 5.1 已完成
 
 接口：
 
@@ -162,7 +162,7 @@ ViewModel(MVVM设计模式):
 * 用户登录：login
 * 积分-用户信息:coinUserInfo
 
-### 4.2 未完成
+### 5.2 未完成
 
 功能开发：
 
@@ -173,7 +173,7 @@ ViewModel(MVVM设计模式):
 
 * 剩余接口
 
-## 五 备注
+## 六 备注
 
 * 本项目按照：接口(API)+视图(组件、布局)+逻辑处理(ViewModel)+接口返回数据(Model)的模式进行开发
 * swiftUI练手项目，可能存在代码不规范等错误，如有错误还望指正
