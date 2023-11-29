@@ -64,6 +64,6 @@ struct MessageItemView: View {
 }
 struct MessageItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageItemView(message: .constant(Message(category: 2, date: 1687162598000, fromUser: "yndongyong", fromUserID: 63839, fullLink: "https://wanandroid.com/wenda/show/8857", id: 747349, isRead: 1, link: "/wenda/show/8857", message: "奔溃异常的每一行最后为什么会带有TbsSdk.java的字眼，只集成了Sentry这一类奔溃捕获框架，google了TbsSdk也没有搜索出结果，只搜索到腾讯tbs服务，但是没有继承这一框架。通过./gradlew app:dependencies --scan --configuration normalDebugRuntimeClasspath 分析了第三方依赖...", niceDate: "1天前", tag: "新回答", title: "回答了：每日一问 问答征集", userID: 26707)))
+        MessageItemView(message: .constant(Const.shared.getMessage()))
     }
 }

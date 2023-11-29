@@ -7,147 +7,132 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 // MARK: - ArticleModel
-struct ArticleModel: Codable,ModelProtocol {
+class ArticleModel: Mappable{
     
-    func newJSONDecoder() -> JSONDecoder {
-        let decoder = JSONDecoder()
-        if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-            decoder.dateDecodingStrategy = .iso8601
-        }
-        return decoder
-    }
-
-    func newJSONEncoder() -> JSONEncoder {
-        let encoder = JSONEncoder()
-        if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-            encoder.dateEncodingStrategy = .iso8601
-        }
-        return encoder
+    var data: ArticleModelData?
+    var errorCode: Int?
+    var errorMsg: String?
+    required init?(map:Map) {
+        
     }
     
-    let data: ArticleModelData?
-    let errorCode: Int?
-    let errorMsg: String?
+    func mapping(map: Map) {
+        data <- map["data"]
+        errorCode <- map["errorCode"]
+        errorMsg <- map["errorMsg"]
+    }
 }
-
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseArticleModelData { response in
-//     if let articleModelData = response.result.value {
-//       ...
-//     }
-//   }
 
 // MARK: - ArticleModelData
-struct ArticleModelData: Codable {
-    let curPage: Int?
-    let datas: [Article]?
-    let offset: Int?
-    let over: Bool?
-    let pageCount, size, total: Int?
+class ArticleModelData: Mappable{
+    var curPage: Int?
+    var datas: [Article]? = []
+    var offset: Int?
+    var over: Bool?
+    var pageCount, size, total: Int?
+    
+    required init?(map:Map) {
+        
+    }
+    func mapping(map: Map) {
+        curPage <- map["curPage"]
+        datas <- map["datas"]
+        offset <- map["offset"]
+        over <- map["over"]
+        pageCount <- map["pageCount"]
+        size <- map["size"]
+        total <- map["total"]
+    }
 }
-
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseDataElement { response in
-//     if let dataElement = response.result.value {
-//       ...
-//     }
-//   }
 
 // MARK: - DataElement
-struct Article: Codable,Identifiable,Equatable {
-    let adminAdd: Bool?
-    let apkLink: String?
-    let audit: Int?
-    let author: String?
-    let canEdit: Bool?
-    let chapterID: Int?
-    let chapterName: String?
-    let collect: Bool?
-    let courseID: Int?
-    let descMd: String?
-    let envelopePic: String?
-    let fresh: Bool?
-    let host: String?
-    let id: Int?
-    let isAdminAdd: Bool?
-    let link: String?
-    let desc,niceDate, niceShareDate, origin, dataPrefix: String?
-    let projectLink: String?
-    let publishTime, realSuperChapterID, selfVisible, shareDate: Int?
-    let shareUser: String?
-    let superChapterID: Int?
-    let superChapterName: String?
-    let tags: [Tag]?
-    let title: String?
-    let type, userID, visible, zan: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case adminAdd, apkLink, audit, author, canEdit
-        case chapterID = "chapterId"
-        case chapterName, collect
-        case courseID = "courseId"
-        case desc, descMd, envelopePic, fresh, host, id, isAdminAdd, link, niceDate, niceShareDate, origin
-        case dataPrefix = "prefix"
-        case projectLink, publishTime
-        case realSuperChapterID = "realSuperChapterId"
-        case selfVisible, shareDate, shareUser
-        case superChapterID = "superChapterId"
-        case superChapterName, tags, title, type
-        case userID = "userId"
-        case visible, zan
+class Article: Mappable,Identifiable {
+    
+    var adminAdd: Bool?
+    var apkLink: String?
+    var audit: Int?
+    var author: String?
+    var canEdit: Bool?
+    var chapterId: Int?
+    var chapterName: String?
+    var collect: Bool?
+    var courseId: Int?
+    var descMd: String?
+    var envelopePic: String?
+    var fresh: Bool?
+    var host: String?
+    var id: Int?
+    var isAdminAdd: Bool?
+    var link: String?
+    var desc,niceDate, niceShareDate, origin, prefix: String?
+    var projectLink: String?
+    var publishTime, realSuperChapterId, selfVisible, shareDate: Int?
+    var shareUser: String?
+    var superChapterId: Int?
+    var superChapterName: String?
+    var tags: [Tag]?
+    var title: String?
+    var type, userId, visible, zan: Int?
+    
+    init() {
     }
-    static func ==(lhs: Article, rhs: Article) -> Bool {
-        return lhs.id == rhs.id
+    
+    required init?(map:ObjectMapper.Map) {
+        
     }
+    func mapping(map: ObjectMapper.Map) {
+        adminAdd <- map["adminAdd"]
+        apkLink <- map["apkLink"]
+        audit <- map["audit"]
+        author <- map["author"]
+        canEdit <- map["canEdit"]
+        chapterId <- map["chapterId"]
+        chapterName <- map["chapterName"]
+        collect <- map["collect"]
+        courseId <- map["courseId"]
+        descMd <- map["descMd"]
+        envelopePic <- map["envelopePic"]
+        fresh <- map["fresh"]
+        host <- map["host"]
+        id <- map["id"]
+        isAdminAdd <- map["isAdminAdd"]
+        link <- map["link"]
+        desc <- map["desc"]
+        niceDate <- map["niceDate"]
+        niceShareDate <- map["niceShareDate"]
+        origin <- map["origin"]
+        prefix <- map["prefix"]
+        projectLink <- map["dataPrefix"]
+        publishTime <- map["publishTime"]
+        realSuperChapterId <- map["realSuperChapterId"]
+        selfVisible <- map["selfVisible"]
+        shareDate <- map["shareDate"]
+        shareUser <- map["shareUser"]
+        superChapterId <- map["superChapterId"]
+        superChapterName <- map["superChapterName"]
+        tags <- map["tags"]
+        title <- map["title"]
+        type <- map["type"]
+        userId <- map["userId"]
+        visible <- map["visible"]
+        zan <- map["zan"]
+        
+    }
+    
 }
-
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseTag { response in
-//     if let tag = response.result.value {
-//       ...
-//     }
-//   }
-
 // MARK: - Tag
-struct Tag: Codable {
-    let name, url: String?
-}
-
-// MARK: - Helper functions for creating encoders and decoders
-
-
-
-// MARK: - Alamofire response handlers
-
-extension DataRequest {
-    fileprivate func decodableResponseSerializer<T: Decodable>() -> DataResponseSerializer<T> {
-        return DataResponseSerializer { _, response, data, error in
-            guard error == nil else { return .failure(error!) }
-
-            guard let data = data else {
-                return .failure(AFError.responseSerializationFailed(reason: .inputDataNil))
-            }
-
-            return Result { try newJSONDecoder().decode(T.self, from: data) }
-        }
+class Tag:Mappable,Identifiable{
+    var name:String?
+    var url: String?
+    
+    required init?(map:Map) {
+        
     }
-
-    @discardableResult
-    fileprivate func responseDecodable<T: Decodable>(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
-        return response(queue: queue, responseSerializer: decodableResponseSerializer(), completionHandler: completionHandler)
-    }
-
-    @discardableResult
-    func responseArticleModel(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<ArticleModel>) -> Void) -> Self {
-        return responseDecodable(queue: queue, completionHandler: completionHandler)
+    func mapping(map: Map) {
+        name <- map["name"]
+        url <- map["url"]
     }
 }
-

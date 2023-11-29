@@ -9,17 +9,21 @@ import SwiftUI
 
 struct ArticleCellViewBuilder: View {
     
-    @Binding var vm: HomeViewModel
+    @StateObject var vm: HomeViewModel = HomeViewModel()
     
     var body: some View {
+        
+        //let articles = vm.articleModel?.data?.datas
+        //let articles = Const.shared.getArticleModel().data?.datas //预览数据
+        let articles = vm.articles
         VStack{
-            //article
-            let articles = vm.articleModel?.data?.datas
-            //List{
             if(articles != nil){
-                ForEach(articles!){ article in ArticleCellView(article: .constant(article)) }
+                ForEach(articles!){
+                    article in ArticleCellView(article: .constant(article))
+                }
             }
-            // }
+        }.onAppear(){
+            vm.getArticleModel(page: 0)
         }
     }
 }
@@ -27,6 +31,6 @@ struct ArticleCellViewBuilder: View {
 struct ArticleCellViewBuilder_Previews: PreviewProvider {
     static var previews: some View {
         let vm: HomeViewModel = HomeViewModel()
-        ArticleCellViewBuilder(vm:.constant(vm))
+        ArticleCellViewBuilder(vm:vm)
     }
 }

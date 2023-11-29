@@ -21,80 +21,44 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 // MARK: - UserInfoModel
-struct CoinUserInfoModel: Codable ,ModelProtocol {
-    // MARK: - Helper functions for creating encoders and decoders
-
-    func newJSONDecoder() -> JSONDecoder {
-        let decoder = JSONDecoder()
-        if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-            decoder.dateDecodingStrategy = .iso8601
-        }
-        return decoder
-    }
-
-    func newJSONEncoder() -> JSONEncoder {
-        let encoder = JSONEncoder()
-        if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-            encoder.dateEncodingStrategy = .iso8601
-        }
-        return encoder
-    }
+class CoinUserInfoModel: Mappable {
     
-    let data: UserInfo?
-    let errorCode: Int?
-    let errorMsg: String?
+    var data: UserInfo?
+    var errorCode: Int?
+    var errorMsg: String?
+    
+    required init?(map:Map) {
+        
+    }
+    func mapping(map: Map) {
+        data <- map["data"]
+        errorCode <- map["errorCode"]
+        errorMsg <- map["errorMsg"]
+    }
 }
 
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseDataClass { response in
-//     if let dataClass = response.result.value {
-//       ...
-//     }
-//   }
 
 // MARK: - DataClass
-struct UserInfo: Codable {
-    let coinCount, level: Int?
-    let nickname, rank: String?
-    let userID: Int?
-    let username: String?
-
-    enum CodingKeys: String, CodingKey {
-        case coinCount, level, nickname, rank
-        case userID = "userId"
-        case username
+class UserInfo: Mappable {
+    var coinCount, level: Int?
+    var nickname, rank: String?
+    var userID: Int?
+    var username: String?
+    
+    
+    required init?(map:Map) {
+        
     }
+    func mapping(map: Map) {
+        coinCount <- map["coinCount"]
+        level <- map["level"]
+        nickname <- map["nickname"]
+        rank <- map["rank"]
+        userID <- map["userID"]
+        username <- map["username"]
+    }
+    
 }
-
-
-
-// MARK: - Alamofire response handlers
-
-extension DataRequest {
-    fileprivate func decodableResponseSerializer<T: Decodable>() -> DataResponseSerializer<T> {
-        return DataResponseSerializer { _, response, data, error in
-            guard error == nil else { return .failure(error!) }
-
-            guard let data = data else {
-                return .failure(AFError.responseSerializationFailed(reason: .inputDataNil))
-            }
-
-            return Result { try newJSONDecoder().decode(T.self, from: data) }
-        }
-    }
-
-    @discardableResult
-    fileprivate func responseDecodable<T: Decodable>(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
-        return response(queue: queue, responseSerializer: decodableResponseSerializer(), completionHandler: completionHandler)
-    }
-
-    @discardableResult
-    func responseCoinUserInfoModel(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<CoinUserInfoModel>) -> Void) -> Self {
-        return responseDecodable(queue: queue, completionHandler: completionHandler)
-    }
-}
-

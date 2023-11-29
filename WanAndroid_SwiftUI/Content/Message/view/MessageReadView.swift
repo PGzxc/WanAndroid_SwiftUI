@@ -12,9 +12,7 @@ struct MessageReadView: View {
     @StateObject private var vm: MessageReadViewModel = MessageReadViewModel()
     
     var body: some View {
-        MessageItemReadBuilder(vm: .constant(vm)).onAppear(){
-            vm.getMessageRead(page: 1)
-        }
+        MessageItemReadBuilder()
     }
 }
 

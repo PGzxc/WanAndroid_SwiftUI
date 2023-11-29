@@ -44,10 +44,15 @@ struct MeBuilder: View {
                 Image(systemName: "chevron.right")
                 
             }.onTapGesture {
-                isModalPresented.toggle()
+                if(!Storage.shared.isLogin){
+                    isModalPresented.toggle()
+                }
             }
             .sheet(isPresented: $isModalPresented){
-                LoginView()
+                
+                if(!Storage.shared.isLogin){
+                    LoginView()
+                }
             }
             //2-显示信息
             LazyVGrid(columns: headColumn, spacing: 30){

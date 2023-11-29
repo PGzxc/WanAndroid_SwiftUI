@@ -21,111 +21,79 @@
 
 import Foundation
 import Alamofire
-
+import ObjectMapper
 // MARK: - MessageModel
-struct MessageModel: Codable {
+class MessageModel: Mappable {
 
-    let data: MessageModelData?
-    let errorCode: Int?
-    let errorMsg: String?
+    var data: MessageModelData?
+    var errorCode: Int?
+    var errorMsg: String?
+    
+    
+    required init?(map:Map) {
+        
+    }
+    func mapping(map: Map) {
+        data <- map["data"]
+        errorCode <- map["errorCode"]
+        errorMsg <- map["errorMsg"]
+    }
 }
-
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseMessageModelData { response in
-//     if let messageModelData = response.result.value {
-//       ...
-//     }
-//   }
 
 // MARK: - MessageModelData
-struct MessageModelData: Codable {
+class MessageModelData: Mappable {
 
-    let curPage: Int?
-    let datas: [Message]?
-    let offset: Int?
-    let over: Bool?
-    let pageCount, size, total: Int?
+    var curPage: Int?
+    var datas: [Message]?
+    var offset: Int?
+    var over: Bool?
+    var pageCount, size, total: Int?
+    
+    required init?(map:Map) {
+        
+    }
+    func mapping(map: Map) {
+        curPage <- map["curPage"]
+        datas <- map["datas"]
+        offset <- map["offset"]
+        over <- map["over"]
+        pageCount <- map["pageCount"]
+        size <- map["size"]
+        total <- map["total"]
+    }
 }
 
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseDataElement { response in
-//     if let dataElement = response.result.value {
-//       ...
-//     }
-//   }
 
 // MARK: - DataElement
-struct Message: Codable,Identifiable,Equatable {
+class Message: Mappable,Identifiable {
     
-    let category, date: Int?
-    let fromUser: String?
-    let fromUserID: Int?
-    let fullLink: String?
-    let id, isRead: Int?
-    let link: String?
-    let message, niceDate: String?
-    let tag: String?
-    let title: String?
-    let userID: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case category, date, fromUser
-        case fromUserID = "fromUserId"
-        case fullLink, id, isRead, link, message, niceDate, tag, title
-        case userID = "userId"
+    var category, date: Int?
+    var fromUser: String?
+    var fromUserId: Int?
+    var fullLink: String?
+    var id, isRead: Int?
+    var link: String?
+    var message, niceDate: String?
+    var tag: String?
+    var title: String?
+    var userId: Int?
+    
+    required init?(map:Map) {
+        
+    }
+    func mapping(map: Map) {
+        category <- map["category"]
+        date <- map["date"]
+        fromUser <- map["fromUser"]
+        fromUserId <- map["fromUserId"]
+        fullLink <- map["fullLink"]
+        id <- map["id"]
+        isRead <- map["isRead"]
+        link <- map["link"]
+        message <- map["message"]
+        niceDate <- map["niceDate"]
+        tag <- map["tag"]
+        title <- map["title"]
+        userId <- map["userId"]
     }
 }
-
-//enum Link: String, Codable {
-//    case wendaShow8857 = "/wenda/show/8857"
-//}
-
-
-// MARK: - Helper functions for creating encoders and decoders
-//func newJSONDecoder() -> JSONDecoder {
-//    let decoder = JSONDecoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        decoder.dateDecodingStrategy = .iso8601
-//    }
-//    return decoder
-//}
-
-func newJSONEncoder() -> JSONEncoder {
-    let encoder = JSONEncoder()
-    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-        encoder.dateEncodingStrategy = .iso8601
-    }
-    return encoder
-}
-
-
-// MARK: - Alamofire response handlers
-
-extension DataRequest {
-    fileprivate func decodableResponseSerializer<T: Decodable>() -> DataResponseSerializer<T> {
-        return DataResponseSerializer { _, response, data, error in
-            guard error == nil else { return .failure(error!) }
-
-            guard let data = data else {
-                return .failure(AFError.responseSerializationFailed(reason: .inputDataNil))
-            }
-
-            return Result { try newJSONDecoder().decode(T.self, from: data) }
-        }
-    }
-
-    @discardableResult
-    fileprivate func responseDecodable<T: Decodable>(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
-        return response(queue: queue, responseSerializer: decodableResponseSerializer(), completionHandler: completionHandler)
-    }
-
-    @discardableResult
-    func responseMessageModel(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<MessageModel>) -> Void) -> Self {
-        return responseDecodable(queue: queue, completionHandler: completionHandler)
-    }
-}
-

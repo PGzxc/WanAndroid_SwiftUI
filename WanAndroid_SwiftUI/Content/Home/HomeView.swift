@@ -12,15 +12,11 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView{
-            VStack{
+            VStackLayout {
                 //轮播图
-                ImageCarouseViewBuilder(vm:.constant(vm)).onAppear(){
-                    vm.getBannerModel()
-                }
+                ImageCarouseViewBuilder()
                 //文章
-                ArticleCellViewBuilder(vm: .constant(vm)).onAppear(){
-                    vm.getArticle(page: 0)
-                }
+                ArticleCellViewBuilder()
             }
         }
     }

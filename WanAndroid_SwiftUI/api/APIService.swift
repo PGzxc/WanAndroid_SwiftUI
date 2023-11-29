@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
 
 
 struct APIService {
@@ -14,12 +15,13 @@ struct APIService {
     //MARK: - Singleton
     static let instance = APIService()
     
-    init(){}
+    private init(){}
     
     //MARK: - URL
     
     func getBanner(completion:@escaping (BannerModel?, Error?)->()){
-        Alamofire.request(Router.homeBanner).responseBannerModel{(response: DataResponse<BannerModel>) in
+        
+        Alamofire.request(Router.homeBanner).responseObject{(response: DataResponse<BannerModel>) in
             if let error = response.error{
                 completion(nil,error)
                 return
@@ -33,7 +35,7 @@ struct APIService {
     
     func getArticle(with page: Int,completion:@escaping (ArticleModel?, Error?)->()){
         
-        Alamofire.request(Router.homeArticleList(page)).responseArticleModel{(response: DataResponse<ArticleModel>) in
+        Alamofire.request(Router.homeArticleList(page)).responseObject{(response: DataResponse<ArticleModel>) in
             
             if let error = response.error{
                 completion(nil,error)
@@ -48,7 +50,7 @@ struct APIService {
     
     func userLogin(with username:String,with password:String,completion:@escaping (UserModel?, Error?)->()){
         
-        Alamofire.request(Router.login(username, password)).responseUserModel{ (response:DataResponse<UserModel>) in
+        Alamofire.request(Router.login(username, password)).responseObject{ (response:DataResponse<UserModel>) in
             
             if let error = response.error{
                 completion(nil,error)
@@ -67,7 +69,7 @@ struct APIService {
     
     func getCollectList(with index: Int,completion:@escaping (CollectListModel?, Error?)->()){
         
-        Alamofire.request(Router.collectList(index)).responseCollectListModel{(response:DataResponse<CollectListModel>) in
+        Alamofire.request(Router.collectList(index)).responseObject{(response:DataResponse<CollectListModel>) in
             
             if let error = response.error{
                 completion(nil,error)
@@ -82,7 +84,7 @@ struct APIService {
     
     //体系
     func getTree(completion:@escaping (TreeModel?, Error?)->()){
-        Alamofire.request(Router.tree).responseTreeModel{(response: DataResponse<TreeModel>) in
+        Alamofire.request(Router.tree).responseObject{(response: DataResponse<TreeModel>) in
             if let error = response.error{
                 completion(nil,error)
                 return
@@ -95,7 +97,7 @@ struct APIService {
     }
     //项目
     func getProject(completion:@escaping (ProjectModel?, Error?)->()){
-        Alamofire.request(Router.project).responseProjectModel{(response: DataResponse<ProjectModel>) in
+        Alamofire.request(Router.project).responseObject{(response: DataResponse<ProjectModel>) in
             if let error = response.error{
                 completion(nil,error)
                 return
@@ -108,7 +110,7 @@ struct APIService {
     }
     //项目-子-文章
     func getProjectArticle(with page: Int, andWith cid:Int,completion:@escaping (ProjectSonModel?, Error?)->()){
-        Alamofire.request(Router.projectArticle(page, cid)).responseProjectSonModel{(response: DataResponse<ProjectSonModel>) in
+        Alamofire.request(Router.projectArticle(page, cid)).responseObject{(response: DataResponse<ProjectSonModel>) in
             if let error = response.error{
                 completion(nil,error)
                 return
@@ -121,7 +123,7 @@ struct APIService {
     }
     //用户信息
     func getCoinUserInfo(completion:@escaping (CoinUserInfoModel?, Error?)->()){
-        Alamofire.request(Router.coinUserInfo).responseCoinUserInfoModel{(response: DataResponse<CoinUserInfoModel>) in
+        Alamofire.request(Router.coinUserInfo).responseObject{(response: DataResponse<CoinUserInfoModel>) in
             if let error = response.error{
                 completion(nil,error)
                 return
@@ -135,7 +137,7 @@ struct APIService {
     //消息-未读
     func getMessageUnRead(with page: Int,completion:@escaping (MessageModel?, Error?)->()){
         
-        Alamofire.request(Router.messageUnRead(page)).responseMessageModel{(response: DataResponse<MessageModel>) in
+        Alamofire.request(Router.messageUnRead(page)).responseObject{(response: DataResponse<MessageModel>) in
             
             if let error = response.error{
                 completion(nil,error)
@@ -151,7 +153,7 @@ struct APIService {
     //消息-已读
     func getMessageRead(with page: Int,completion:@escaping (MessageModel?, Error?)->()){
         
-        Alamofire.request(Router.messageRead(page)).responseMessageModel{(response: DataResponse<MessageModel>) in
+        Alamofire.request(Router.messageRead(page)).responseObject{(response: DataResponse<MessageModel>) in
             
             if let error = response.error{
                 completion(nil,error)

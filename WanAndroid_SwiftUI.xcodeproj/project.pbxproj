@@ -31,6 +31,7 @@
 		F3BDCCE82A37094D00FC3CCD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCE72A37094D00FC3CCD /* Router.swift */; };
 		F3BDCCEA2A37096900FC3CCD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCE92A37096900FC3CCD /* APIService.swift */; };
 		F3BDCCED2A370A0800FC3CCD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDCCEC2A370A0800FC3CCD /* HomeViewModel.swift */; };
+		F3CBED4F2B1701BE00D7E722 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CBED4E2B1701BE00D7E722 /* Const.swift */; };
 		F3D56EA22A36CC4D008876F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E972A36CC4D008876F0 /* HomeView.swift */; };
 		F3D56EA32A36CC4D008876F0 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E992A36CC4D008876F0 /* NavigationView.swift */; };
 		F3D56EA42A36CC4D008876F0 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D56E9B2A36CC4D008876F0 /* TabBarView.swift */; };
@@ -86,6 +87,7 @@
 		F3BDCCE72A37094D00FC3CCD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F3BDCCE92A37096900FC3CCD /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F3BDCCEC2A370A0800FC3CCD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F3CBED4E2B1701BE00D7E722 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		F3D56E972A36CC4D008876F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F3D56E992A36CC4D008876F0 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		F3D56E9B2A36CC4D008876F0 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				F3BDCCD52A3705B400FC3CCD /* Storage.swift */,
+				F3CBED4E2B1701BE00D7E722 /* Const.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				F3BDCCEA2A37096900FC3CCD /* APIService.swift in Sources */,
 				F3DA090B2A419EC30089A7A6 /* CoinUserInfoModel.swift in Sources */,
 				F3D5EE1A2A3C6A64000ACDFF /* NavigationSectionBuilder.swift in Sources */,
+				F3CBED4F2B1701BE00D7E722 /* Const.swift in Sources */,
 				F3BDCCE62A37092F00FC3CCD /* API.swift in Sources */,
 				F3BDCCE82A37094D00FC3CCD /* Router.swift in Sources */,
 				F3D6F7F12A57A44100D9801E /* SwiftUIView.swift in Sources */,
@@ -645,6 +649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -699,6 +704,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -718,6 +724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WanAndroid_SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 34LPAHZG4A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -748,6 +755,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WanAndroid_SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 34LPAHZG4A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

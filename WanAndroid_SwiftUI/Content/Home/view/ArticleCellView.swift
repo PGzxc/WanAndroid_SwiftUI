@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import SDWebImageSwiftUI
+import ObjectMapper
 
 struct ArticleCellView: View{
     
@@ -22,7 +23,6 @@ struct ArticleCellView: View{
         } .sheet(isPresented: $isModalPresented){
             LoadingWebView(url: URL(string: article.link ?? ""))
         }
-        
         
         //NavigationLink(destination: LoadingWebView(url: URL(string: article.link ?? "")), label: { articleView  })
         
@@ -125,6 +125,6 @@ struct ArticleCellView: View{
 
 struct ArticleCellView_Previews: PreviewProvider{
     static var previews: some View{
-        ArticleCellView(article: .constant(Article(adminAdd: true, apkLink: "apkLink", audit: 1, author: "author", canEdit: true, chapterID: 1, chapterName: "chapterName", collect: true, courseID: 1, descMd: "descMd", envelopePic: "envelopePic", fresh: true, host: "host", id: 1, isAdminAdd: true, link: "link", desc: "desc", niceDate: "niceDate", niceShareDate: "niceShareDate", origin: "origin", dataPrefix: "dataPrefix", projectLink: "projectLink", publishTime: 1, realSuperChapterID: 1, selfVisible: 1, shareDate: 1, shareUser: "shareUser", superChapterID: 1, superChapterName: "superChapterName", tags: [Tag(name: "tag", url: nil)], title: "title", type: 1, userID: 1, visible: 1, zan: 1)))
+        return ArticleCellView(article: .constant(Const.shared.getArticle()))
     }
 }

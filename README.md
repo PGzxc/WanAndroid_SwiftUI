@@ -141,6 +141,11 @@ ViewModel(MVVM设计模式):
 
 * 通过onReceive方法，监听标签的切换，显示相应的视图
 
+### v9.0
+
+* 数据实体类(bean)由quicktype.io生成改为AlamofireObjectMapper
+* 解决能够接收到数据，页面无法显示问题
+
 ## 四 开发任务
 
 ### 4.1 已完成
@@ -174,14 +179,14 @@ ViewModel(MVVM设计模式):
 * swiftUI练手项目，可能存在代码不规范等错误，如有错误还望指正
 
 
-[swift-waz-1]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-home-1.png
-[swift-waz-2]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-detail-2.png
-[swift-waz-3]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-navigator-3.png
-[swift-waz-4]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-project-4.png
-[swift-waz-5]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-message-unread-5.png
-[swift-waz-6]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-message-read-6.png
-[swift-waz-7]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-message-info-7.png
-[swift-waz-8]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-me-info-8.png
-[swift-waz-9]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-me-info-no-9.png
-[swift-waz-10]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-login-10.png
-[swift-waz-11]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/swiftui-waz-register-11.png
+[swift-waz-1]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-home-1.png
+[swift-waz-2]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-detail-2.png
+[swift-waz-3]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-navigator-3.png
+[swift-waz-4]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-project-4.png
+[swift-waz-5]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-message-unread-5.png
+[swift-waz-6]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-message-read-6.png
+[swift-waz-7]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-message-info-7.png
+[swift-waz-8]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-me-info-8.png
+[swift-waz-9]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-me-info-no-9.png
+[swift-waz-10]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-login-10.png
+[swift-waz-11]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-register-11.png

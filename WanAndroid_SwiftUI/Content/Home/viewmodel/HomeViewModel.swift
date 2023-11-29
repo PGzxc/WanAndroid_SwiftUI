@@ -11,6 +11,11 @@ class HomeViewModel:ObservableObject{
     
     @Published var bannerModel:BannerModel? = nil
     @Published var articleModel:ArticleModel? = nil
+    
+    @Published var banners:[Banner]? = []
+    @Published var articles:[Article]? = []
+    
+    
     @Published var userModel:UserModel? = nil
     @Published var collectListModel:CollectListModel? = nil
     
@@ -22,43 +27,46 @@ class HomeViewModel:ObservableObject{
     }
     
     func getBannerModel(){
+        
         APIService.instance.getBanner(completion: {(bannerModel,error) in
             if let error = error{
                 debugPrint(error)
                 return
             }
             self.bannerModel = bannerModel
+            self.banners = bannerModel?.data
+            
         })
     }
     
-    func getArticle(page:Int){
-        APIService.instance.getArticle(with: page, completion: {(article,error) in
+    func getArticleModel(page:Int){
+        APIService.instance.getArticle(with: page, completion: {(articleModel,error) in
             if let error = error{
                 debugPrint(error)
                 return
             }
-            self.articleModel = article
+            self.articleModel = articleModel
+            self.articles = articleModel?.data?.datas
             
         })
     }
     func userLogin(username:String, password:String){
-        APIService.instance.userLogin(with: username, with: password, completion: {(user,error) in
+        APIService.instance.userLogin(with: username, with: password, completion: {(userModel,error) in
             if let error = error{
                 debugPrint(error)
                 return
             }
-            self.userModel = user
-            
+            self.userModel = userModel
         })
     }
  
     func getCollectList(index:Int){
-        APIService.instance.getCollectList(with: index, completion: {(collectList,error) in
+        APIService.instance.getCollectList(with: index, completion: {(collectListModel,error) in
             if let error = error{
                 debugPrint(error)
                 return
             }
-            self.collectListModel = collectList
+            self.collectListModel = collectListModel
             
         })
     }

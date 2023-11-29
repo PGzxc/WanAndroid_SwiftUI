@@ -19,11 +19,11 @@ struct NavigationSectionBuilder: View {
             if(treeDatas != nil ){
                 
                 ForEach(treeDatas!){ treeItem in
-                    Section(header: Text(treeItem.name).font(Font.system(size: 18))) {
+                    Section(header: Text(treeItem.name!).font(Font.system(size: 18))) {
                         //标签
                         LazyVGrid(columns: columns, spacing: 10){
-                            ForEach(treeItem.children){ treeItem in
-                                Button(treeItem.name) {}
+                            ForEach(treeItem.children!){ treeItem in
+                                Button(treeItem.name!) {}
                                 .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
                                 .border(.gray,width: 1)
                                 .cornerRadius(2)

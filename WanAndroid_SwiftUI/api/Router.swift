@@ -89,7 +89,7 @@ internal extension APIService{
             let encoding = URLEncoding.default
             return try encoding.encode(request, with: params)
             
-            return request
+            //return request
         }
     }
 }

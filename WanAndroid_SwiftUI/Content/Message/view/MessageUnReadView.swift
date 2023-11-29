@@ -11,9 +11,7 @@ struct MessageUnReadView: View {
     
     @StateObject private var vm: MessageUnReadViewModel = MessageUnReadViewModel()
     var body: some View {
-        MessageItemUnReadBuilder(vm: .constant(vm)).onAppear(){
-            vm.getMessageUnRead(page: 1)
-        }
+        MessageItemUnReadBuilder()
     }
 }
 

@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct ImageCarouseViewBuilder: View {
     
-    @Binding var vm: HomeViewModel
+    @StateObject var vm: HomeViewModel = HomeViewModel()
     @State private var goToNewView: Bool = false
     @State var banner:Banner? = nil
     @State var isModalPresented = false
@@ -18,31 +18,29 @@ struct ImageCarouseViewBuilder: View {
     
     var body: some View {
     
-        let bannerDatas = vm.bannerModel?.data
-        if(bannerDatas != nil){
-            
-            ImageCarouselView(numberOfImages: bannerDatas!.count){
-                ForEach(bannerDatas!){ banner in
-                    AnimatedImage(url: URL(string: banner.imagePath))
-                        .resizable()
-                        .scaledToFill()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.main.bounds.width,height: 250)
-                        .clipped()
-                        .onTapGesture {
-                            self.banner = banner
-                            self.isModalPresented.toggle()
-                            //self.goToNewView.toggle()
-                        }
-                        .sheet(isPresented: $isModalPresented){
-                            LoadingWebView(url: URL(string: self.banner?.url ?? ""))
-                        }
-                    
-                }
-            }.frame(width: UIScreen.main.bounds.width, height: 250, alignment: .center)
-            
-        }
-        
+        ImageCarouselView(numberOfImages: vm.banners!.count){
+            ForEach(vm.banners!){ banner in
+                AnimatedImage(url: URL(string: banner.imagePath ?? ""))
+                    .resizable()
+                    .scaledToFill()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width,height: 250)
+                    .clipped()
+                    .onTapGesture {
+                        self.banner = banner
+                        self.isModalPresented.toggle()
+                        //self.goToNewView.toggle()
+                    }
+                    .sheet(isPresented: $isModalPresented){
+                        LoadingWebView(url: URL(string: self.banner?.url ?? ""))
+                    }
+                
+            }
+        }.frame(width: UIScreen.main.bounds.width, height: 250, alignment: .center)
+            .onAppear(){
+                vm.getBannerModel()
+            }
+                
         NavigationLink(destination: LoadingWebView(url: URL(string: self.banner?.url ?? "")), isActive: self.$goToNewView) { EmptyView() }
     }
 }
@@ -51,6 +49,7 @@ struct ImageCarouseViewBuilder_Previews: PreviewProvider {
     
     static var previews: some View {
         let vm: HomeViewModel = HomeViewModel()
-        ImageCarouseViewBuilder(vm: .constant(vm))
+        ImageCarouseViewBuilder(vm:vm)
+        //ImageCarouseViewBuilder(vm: .constant(vm))
     }
 }

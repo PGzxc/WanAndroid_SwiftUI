@@ -21,113 +21,83 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 // MARK: - CollectListModel
-struct CollectListModel: Codable ,ModelProtocol{
+class CollectListModel: Mappable{
     
-    // MARK: - Helper functions for creating encoders and decoders
-
-    func newJSONDecoder() -> JSONDecoder {
-        let decoder = JSONDecoder()
-        if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-            decoder.dateDecodingStrategy = .iso8601
-        }
-        return decoder
-    }
-
-    func newJSONEncoder() -> JSONEncoder {
-        let encoder = JSONEncoder()
-        if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-            encoder.dateEncodingStrategy = .iso8601
-        }
-        return encoder
-    }
+    var data: CollectListModelData?
+    var errorCode: Int?
+    var errorMsg: String?
     
-    let data: CollectListModelData?
-    let errorCode: Int?
-    let errorMsg: String?
+    required init?(map:Map) {
+        
+    }
+    func mapping(map: Map) {
+        data <- map["data"]
+        errorCode <- map["errorCode"]
+        errorMsg <- map["errorMsg"]
+    }
 }
-
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseCollectListModelData { response in
-//     if let collectListModelData = response.result.value {
-//       ...
-//     }
-//   }
 
 // MARK: - CollectListModelData
-struct CollectListModelData: Codable {
-    let curPage: Int?
-    let datas: [CollectModel]?
-    let offset: Int?
-    let over: Bool?
-    let pageCount, size, total: Int?
+class CollectListModelData: Mappable {
+    var curPage: Int?
+    var datas: [CollectModel]?
+    var offset: Int?
+    var over: Bool?
+    var pageCount, size, total: Int?
+    
+    required init?(map:Map) {
+        
+    }
+    func mapping(map: Map) {
+        curPage <- map["curPage"]
+        datas <- map["datas"]
+        offset <- map["offset"]
+        over <- map["over"]
+        pageCount <- map["pageCount"]
+        size <- map["size"]
+        total <- map["total"]
+    }
 }
 
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseDataElement { response in
-//     if let dataElement = response.result.value {
-//       ...
-//     }
-//   }
 
 // MARK: - DataElement
-struct CollectModel: Codable {
-    let author: String?
-    let chapterID: Int?
-    let chapterName: String?
-    let courseID: Int?
-    let desc: String?
-    let envelopePic: String?
-    let id: Int?
-    let link: String?
-    let niceDate, origin: String?
-    let originID, publishTime: Int?
-    let title: String?
-    let userID, visible, zan: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case author
-        case chapterID = "chapterId"
-        case chapterName
-        case courseID = "courseId"
-        case desc, envelopePic, id, link, niceDate, origin
-        case originID = "originId"
-        case publishTime, title
-        case userID = "userId"
-        case visible, zan
+class CollectModel: Mappable {
+    var author: String?
+    var chapterID: Int?
+    var chapterName: String?
+    var courseID: Int?
+    var desc: String?
+    var envelopePic: String?
+    var id: Int?
+    var link: String?
+    var niceDate, origin: String?
+    var originID, publishTime: Int?
+    var title: String?
+    var userID, visible, zan: Int?
+    
+    required init?(map:Map) {
+        
     }
+    func mapping(map: Map) {
+        author <- map["author"]
+        chapterID <- map["chapterID"]
+        chapterName <- map["chapterName"]
+        courseID <- map["courseID"]
+        desc <- map["desc"]
+        envelopePic <- map["envelopePic"]
+        id <- map["id"]
+        link <- map["link"]
+        niceDate <- map["niceDate"]
+        origin <- map["origin"]
+        originID <- map["originID"]
+        publishTime <- map["publishTime"]
+        title <- map["title"]
+        userID <- map["userID"]
+        visible <- map["visible"]
+        zan <- map["zan"]
+    }
+    
 }
-
-
-
-// MARK: - Alamofire response handlers
-
-extension DataRequest {
-    fileprivate func decodableResponseSerializer<T: Decodable>() -> DataResponseSerializer<T> {
-        return DataResponseSerializer { _, response, data, error in
-            guard error == nil else { return .failure(error!) }
-
-            guard let data = data else {
-                return .failure(AFError.responseSerializationFailed(reason: .inputDataNil))
-            }
-
-            return Result { try newJSONDecoder().decode(T.self, from: data) }
-        }
-    }
-
-    @discardableResult
-    fileprivate func responseDecodable<T: Decodable>(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
-        return response(queue: queue, responseSerializer: decodableResponseSerializer(), completionHandler: completionHandler)
-    }
-
-    @discardableResult
-    func responseCollectListModel(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<CollectListModel>) -> Void) -> Self {
-        return responseDecodable(queue: queue, completionHandler: completionHandler)
-    }
-}
-

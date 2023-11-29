@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MessageItemUnReadBuilder: View {
-    @Binding var vm:  MessageUnReadViewModel
+    @StateObject var vm:  MessageUnReadViewModel = MessageUnReadViewModel()
     var body: some View {
         VStack{
             let messages = vm.messageModel?.data?.datas
+            //let messages = Const.shared.getMessageModel().data?.datas
             if(messages != nil && messages!.count > 0){
                 ForEach(messages!){ messages in
                     MessageItemView(message:.constant(messages))
@@ -22,8 +23,10 @@ struct MessageItemUnReadBuilder: View {
                         vm.getMessageUnRead(page: 1)
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
+                .frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
             }
+        }.onAppear(){
+            vm.getMessageUnRead(page: 1)
         }
     }
 }
@@ -31,6 +34,6 @@ struct MessageItemUnReadBuilder: View {
 struct MessageItemUnReadBuilder_Previews: PreviewProvider {
     static var previews: some View {
         let vm:  MessageUnReadViewModel  = MessageUnReadViewModel()
-        MessageItemUnReadBuilder(vm: .constant(vm))
+        MessageItemUnReadBuilder(vm: vm)
     }
 }

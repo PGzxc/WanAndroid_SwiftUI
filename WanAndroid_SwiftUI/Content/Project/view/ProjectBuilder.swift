@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProjectBuilder: View {
     
-    @Binding var vm: ProjectViewModel
+    @StateObject var vm: ProjectViewModel = ProjectViewModel()
     @State  var selectedOptionIndex = 0
     
     
@@ -24,14 +24,13 @@ struct ProjectBuilder: View {
                 articleView
                 
             }
+        }.onAppear(){
+            vm.getProjectModel()
         }
     }
     
     var pickView: some View{
         ScrollView(.horizontal){
-//            if vm.options.isEmpty{
-//                Text("Loading")
-//            }else   {
                 HStack(spacing: 0){
                     
                     Picker("Options",selection: $selectedOptionIndex){
@@ -45,7 +44,7 @@ struct ProjectBuilder: View {
                 }.onReceive([self.selectedOptionIndex].publisher.first()) { value in
                     // 当选择值发生变化时执行操作
                     if(!vm.options.isEmpty ){
-                        var option = vm.options[value]
+                        let option = vm.options[value]
                         vm.getProjectTreeArticle(page: 1, cid: vm.optionsDic[option] ?? 0)
                         print("Selected option: \(value)")
                     }
@@ -67,20 +66,7 @@ struct ProjectBuilder: View {
                     }
                 }
             }
-            
         }
-        
-        //        ScrollView{
-        //            ForEach(vm.options,id: \.self) { option in
-        //                let articleList  = vm.projectDictionArticleDataList[vm.optionsDic[option]!]
-        //                if(articleList != nil){
-        //                    ForEach(articleList!){ article in
-        //                        ArticleCellView(article: .constant(article))
-        //                    }
-        //                }
-        //            }
-        //        }
-        
     }
 }
 
@@ -89,6 +75,6 @@ struct ProjectBuilderView_Previews: PreviewProvider {
     
     static var previews: some View {
         let vm: ProjectViewModel = ProjectViewModel()
-        ProjectBuilder(vm: .constant(vm))
+        ProjectBuilder(vm:vm)
     }
 }

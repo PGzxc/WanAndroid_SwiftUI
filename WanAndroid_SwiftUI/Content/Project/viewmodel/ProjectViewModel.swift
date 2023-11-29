@@ -31,9 +31,9 @@ class ProjectViewModel:ObservableObject{
                 debugPrint(error)
                 return
             }
-            projectModel?.data.forEach({ project in
-                self.options.append(project.name)
-                self.optionsDic.updateValue(project.id, forKey: project.name)
+            projectModel?.data!.forEach({ project in
+                self.options.append(project.name!)
+                self.optionsDic.updateValue(project.id!, forKey: project.name!)
             })
             self.options_first = self.options.first ?? ""
             self.projectModel = projectModel
@@ -49,7 +49,7 @@ class ProjectViewModel:ObservableObject{
             }
             
             self.projectSonModel = projectSonModel
-            self.projectDictionArticleDataList.updateValue(projectSonModel!.data.datas, forKey: cid)
+            self.projectDictionArticleDataList.updateValue(projectSonModel!.data!.datas!, forKey: cid)
             //self.projectSonModelDataList.append(projectSonModel!.data)
         })
         
