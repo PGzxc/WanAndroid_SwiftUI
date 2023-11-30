@@ -146,6 +146,11 @@ ViewModel(MVVM设计模式):
 * 数据实体类(bean)由quicktype.io生成改为AlamofireObjectMapper
 * 解决能够接收到数据，页面无法显示问题
 
+### v10.0
+
+* 导入[WrappingHStack](https://github.com/dkk/WrappingHStack)自动换行库
+* 重构导航布局页面
+
 ## 五 开发任务
 
 ### 5.1 已完成

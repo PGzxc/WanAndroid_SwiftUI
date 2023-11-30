@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WrappingHStack
 
 struct NavigationSectionBuilder: View {
     
@@ -19,17 +20,13 @@ struct NavigationSectionBuilder: View {
             if(treeDatas != nil ){
                 
                 ForEach(treeDatas!){ treeItem in
-                    Section(header: Text(treeItem.name!).font(Font.system(size: 18))) {
+                    Section(header: Text(treeItem.name!).fontWeight(Font.Weight.bold).font(Font.system(size: 18))) {
                         //标签
-                        LazyVGrid(columns: columns, spacing: 10){
-                            ForEach(treeItem.children!){ treeItem in
-                                Button(treeItem.name!) {}
-                                .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
-                                .border(.gray,width: 1)
-                                .cornerRadius(2)
-                                //.frame(minWidth: 0,maxWidth: .infinity)
-                                
-                            }
+                        WrappingHStack(treeItem.children!, id:\.self,spacing: .constant(10),lineSpacing: 10) { treeItem in
+                            Text(treeItem.name!)
+                            .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
+                            .border(.gray,width: 1)
+                            .cornerRadius(2)
                         }
                     }
                 }
