@@ -36,7 +36,6 @@ struct ArticleCellView: View{
                 if(article.fresh!){
                     Text("新")
                         .padding(EdgeInsets(top: 2, leading: 5, bottom: 2, trailing:5))
-                    //.frame(width: 50,height: 25)
                         .background(.red)
                         .cornerRadius(2)
                         .shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
@@ -48,7 +47,6 @@ struct ArticleCellView: View{
                 if(article.tags != nil && !article.tags!.isEmpty){
                     Text(article.tags?.first?.name ?? "")
                         .padding(EdgeInsets(top: 2, leading: 5, bottom: 2, trailing:5))
-                    //.frame(width: 80,height: 25)
                         .background(.orange)
                         .cornerRadius(2)
                         .shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
@@ -80,8 +78,8 @@ struct ArticleCellView: View{
             //2-中间部分
             HStack{
                 VStack(alignment:.leading){
-                    Text(article.title ?? "")
-                    Text(article.desc ?? "")
+                    Text(article.title ?? "").lineLimit(2).font(.system(size: 18))
+                    Text(article.desc ?? "").lineLimit(2).foregroundColor(.gray)
                 }
                 Spacer()
                 AnimatedImage(url: URL(string: article.envelopePic ?? ""))
@@ -94,17 +92,26 @@ struct ArticleCellView: View{
             //3-分类、收藏
             HStack{
                 
+                if(article.isTop!){
+                    Text("置顶")
+                        .padding(EdgeInsets(top: 2, leading: 5, bottom: 2, trailing:5))
+                        .background(.red)
+                        .cornerRadius(2)
+                        .shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
+                        .textFieldStyle(.roundedBorder)
+                        .font(Font.system(size: 15))
+                }
+                
                 Text(article.superChapterName ?? "")
                     .padding(EdgeInsets(top: 2, leading: 5, bottom: 2, trailing:5))
-                //.frame(width: 100,height: 25)
                     .background(.green)
                     .cornerRadius(2)
                     .shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
                     .textFieldStyle(.roundedBorder)
                     .font(Font.system(size: 15))
+                
                 Text(article.chapterName ?? "")
                     .padding(EdgeInsets(top: 2, leading: 5, bottom: 2, trailing:5))
-                //.frame(width: 80,height: 25)
                     .background(.orange)
                     .cornerRadius(2)
                     .shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)

@@ -11,6 +11,7 @@
 		F30653422A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30653412A2DEA5300AEB416 /* WanAndroid_SwiftUIApp.swift */; };
 		F30653462A2DEA5500AEB416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30653452A2DEA5500AEB416 /* Assets.xcassets */; };
 		F30653492A2DEA5500AEB416 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */; };
+		F30A7B582B1851CF00284CBE /* ArticleTopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A7B572B1851CF00284CBE /* ArticleTopModel.swift */; };
 		F39290322A3D961D00DCCFC9 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39290312A3D961D00DCCFC9 /* ProjectModel.swift */; };
 		F39290362A3D975800DCCFC9 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39290352A3D975800DCCFC9 /* ProjectViewModel.swift */; };
 		F39290382A3D9C4100DCCFC9 /* ProjectBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39290372A3D9C4100DCCFC9 /* ProjectBuilder.swift */; };
@@ -67,6 +68,7 @@
 		F30653432A2DEA5300AEB416 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F30653452A2DEA5500AEB416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F30653482A2DEA5500AEB416 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F30A7B572B1851CF00284CBE /* ArticleTopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTopModel.swift; sourceTree = "<group>"; };
 		F39290312A3D961D00DCCFC9 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		F39290352A3D975800DCCFC9 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		F39290372A3D9C4100DCCFC9 /* ProjectBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectBuilder.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				F39290392A3DF6D200DCCFC9 /* ProjectSonModel.swift */,
 				F3DA090A2A419EC30089A7A6 /* CoinUserInfoModel.swift */,
 				F3DA09172A41F5830089A7A6 /* MessageModel.swift */,
+				F30A7B572B1851CF00284CBE /* ArticleTopModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				F3DA09212A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift in Sources */,
 				F3BDCCE12A37078F00FC3CCD /* BannerModel.swift in Sources */,
 				F3B87C642A3B170D0072738D /* ImageCarouselView.swift in Sources */,
+				F30A7B582B1851CF00284CBE /* ArticleTopModel.swift in Sources */,
 				F3D56EA32A36CC4D008876F0 /* NavigationView.swift in Sources */,
 				F3B87C622A3B170D0072738D /* ArticleCellView.swift in Sources */,
 				F3BDCCEA2A37096900FC3CCD /* APIService.swift in Sources */,

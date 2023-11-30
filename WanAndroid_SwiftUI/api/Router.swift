@@ -14,6 +14,7 @@ internal extension APIService{
     enum Router: URLRequestConvertible {
         case homeArticleList(Int?) //首页文章列表
         case homeBanner //首页轮播图
+        case homeArticleTop //置顶文章
         case login(String,String) //用户登录
         case collectList(Int?)
         case tree //体系
@@ -32,6 +33,7 @@ internal extension APIService{
             switch self {
             case .homeBanner: return .get
             case .homeArticleList: return .get
+            case .homeArticleTop: return .get
             case .login: return .post
             case .collectList: return .get
             case .tree: return .get
@@ -48,6 +50,7 @@ internal extension APIService{
             switch self {
             case .homeBanner: return API.homeBanner
             case .homeArticleList(let page): return String(format:API.homeArticleList, page ?? 0)
+            case .homeArticleTop: return API.homeArticleTop
             case .login(_, _): return API.login
             case .collectList(let index):return String(format: API.collectList, index ?? 0)
             case .tree: return API.treeList
@@ -64,6 +67,7 @@ internal extension APIService{
             switch self {
             case .homeArticleList:return nil
             case .homeBanner:return nil
+            case .homeArticleTop: return nil
             case .login(let username, let password):
                 return ["username":username,"password":password]
             case .collectList: return nil

@@ -51,6 +51,7 @@ class ArticleModelData: Mappable{
 // MARK: - DataElement
 class Article: Mappable,Identifiable {
     
+    var isTop: Bool? = false
     var adminAdd: Bool?
     var apkLink: String?
     var audit: Int?
@@ -84,6 +85,7 @@ class Article: Mappable,Identifiable {
         
     }
     func mapping(map: ObjectMapper.Map) {
+        isTop <- map["isTop"]
         adminAdd <- map["adminAdd"]
         apkLink <- map["apkLink"]
         audit <- map["audit"]

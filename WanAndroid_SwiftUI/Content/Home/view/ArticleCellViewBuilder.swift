@@ -23,6 +23,7 @@ struct ArticleCellViewBuilder: View {
                 }
             }
         }.onAppear(){
+            vm.getArticleTop()
             vm.getArticleModel(page: 0)
         }
     }

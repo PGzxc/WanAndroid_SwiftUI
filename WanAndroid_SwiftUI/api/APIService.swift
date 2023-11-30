@@ -33,6 +33,24 @@ struct APIService {
         }
     }
     
+    func getArticleTop(completion:@escaping (ArticleTopModel?, Error?)->()){
+        
+        Alamofire.request(Router.homeArticleTop).responseObject{(response: DataResponse<ArticleTopModel>) in
+            
+            if let error = response.error{
+                completion(nil,error)
+                return
+            }
+            if let article = response.result.value {
+                article.data?.forEach({ article in
+                    article.isTop = true
+                })
+                completion(article,nil)
+                return
+            }
+        }
+    }
+    
     func getArticle(with page: Int,completion:@escaping (ArticleModel?, Error?)->()){
         
         Alamofire.request(Router.homeArticleList(page)).responseObject{(response: DataResponse<ArticleModel>) in

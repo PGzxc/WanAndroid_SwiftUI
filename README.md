@@ -151,6 +151,11 @@ ViewModel(MVVM设计模式):
 * 导入[WrappingHStack](https://github.com/dkk/WrappingHStack)自动换行库
 * 重构导航布局页面
 
+### v11.0
+
+* 添加置顶文章接口和界面开发
+* ArticleItem界面更新(置顶标签、Title、content显示等)
+
 ## 五 开发任务
 
 ### 5.1 已完成

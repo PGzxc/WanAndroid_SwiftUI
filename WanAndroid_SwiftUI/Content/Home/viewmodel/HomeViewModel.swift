@@ -11,6 +11,7 @@ class HomeViewModel:ObservableObject{
     
     @Published var bannerModel:BannerModel? = nil
     @Published var articleModel:ArticleModel? = nil
+    @Published var articleTopModel:ArticleTopModel? = nil
     
     @Published var banners:[Banner]? = []
     @Published var articles:[Article]? = []
@@ -26,6 +27,7 @@ class HomeViewModel:ObservableObject{
         
     }
     
+    //1-Banner轮播图
     func getBannerModel(){
         
         APIService.instance.getBanner(completion: {(bannerModel,error) in
@@ -38,7 +40,19 @@ class HomeViewModel:ObservableObject{
             
         })
     }
-    
+    //2-置顶文章
+    func getArticleTop(){
+        APIService.instance.getArticleTop(completion: {(articleTopModel,error) in
+            if let error = error{
+                debugPrint(error)
+                return
+            }
+           // self.articleTopModel = articleTopModel
+            self.articles?.append(contentsOf: articleTopModel!.data!)
+        
+        })
+    }
+    //3-文章列表
     func getArticleModel(page:Int){
         APIService.instance.getArticle(with: page, completion: {(articleModel,error) in
             if let error = error{
@@ -46,7 +60,8 @@ class HomeViewModel:ObservableObject{
                 return
             }
             self.articleModel = articleModel
-            self.articles = articleModel?.data?.datas
+            //self.articles = articleModel?.data?.datas
+            self.articles?.append(contentsOf:articleModel!.data!.datas!)
             
         })
     }
