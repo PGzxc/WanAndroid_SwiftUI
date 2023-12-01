@@ -113,6 +113,19 @@ struct APIService {
             }
         }
     }
+    //知识体系下的文章-知识体系和项目返回值一样，共用bean
+    func getTreeList(with page: Int, andWith cid:Int,completion:@escaping (ProjectSonModel?, Error?)->()){
+        Alamofire.request(Router.treeArticleList(page, cid)).responseObject{(response: DataResponse<ProjectSonModel>) in
+            if let error = response.error{
+                completion(nil,error)
+                return
+            }
+            if let treeListModel = response.result.value {
+                completion(treeListModel,nil)
+                return
+            }
+        }
+    }
     //项目
     func getProject(completion:@escaping (ProjectModel?, Error?)->()){
         Alamofire.request(Router.project).responseObject{(response: DataResponse<ProjectModel>) in

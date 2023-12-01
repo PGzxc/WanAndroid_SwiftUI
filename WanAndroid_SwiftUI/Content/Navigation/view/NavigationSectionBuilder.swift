@@ -14,25 +14,42 @@ struct NavigationSectionBuilder: View {
     let colors: [Color] = [.red, .green, .yellow, .blue]
     var columns: [GridItem] = Array(repeating: .init(.flexible(),alignment: .leading), count: 3)
     
+    @State var navigationTabPresented:Bool = false
+    //@State var selectedOptionIndex:Int = 0
+    @State var selectTreeItem:TreeItem = Const.shared.getTreeItem()
+   
     var body: some View {
+      
         List{
-            let treeDatas = vm.treeModel?.data
+            let treeDatas:[TreeItem]? = vm.treeModel?.data
             if(treeDatas != nil ){
                 
                 ForEach(treeDatas!){ treeItem in
+                    
                     Section(header: Text(treeItem.name!).fontWeight(Font.Weight.bold).font(Font.system(size: 18))) {
                         //标签
-                        WrappingHStack(treeItem.children!, id:\.self,spacing: .constant(10),lineSpacing: 10) { treeItem in
-                            Text(treeItem.name!)
-                            .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
-                            .border(.gray,width: 1)
-                            .cornerRadius(2)
+                        WrappingHStack(treeItem.children!.indices,spacing:.constant(10),lineSpacing: 10) { index in
+                            
+                            Text(treeItem.children![index].name!)
+                                .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
+                                .border(.gray,width: 1)
+                                .cornerRadius(2)
+                                .fullScreenCover(isPresented: $navigationTabPresented, content: {
+                                  
+                                    NavigationTabView(navigationTabPresented: $navigationTabPresented,
+                                                      selectTreeItem: $selectTreeItem)
+                                }).onTapGesture{
+                                    self.selectTreeItem = treeItem
+                                    navigationTabPresented = true
+                                }
                         }
                     }
+                    .environmentObject(vm)
                 }
             }
             
         }.listStyle(GroupedListStyle())
+            
     }
     
 }

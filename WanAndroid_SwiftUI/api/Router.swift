@@ -18,6 +18,7 @@ internal extension APIService{
         case login(String,String) //用户登录
         case collectList(Int?)
         case tree //体系
+        case treeArticleList(Int?,Int) //知识体系下的文章
         case project //项目
         case projectArticle(Int?,Int) //项目文章
         case coinUserInfo //积分-用户信息-使用token
@@ -37,6 +38,7 @@ internal extension APIService{
             case .login: return .post
             case .collectList: return .get
             case .tree: return .get
+            case .treeArticleList: return .get
             case .project: return .get
             case .projectArticle: return .get
             case .coinUserInfo: return .get
@@ -54,6 +56,7 @@ internal extension APIService{
             case .login(_, _): return API.login
             case .collectList(let index):return String(format: API.collectList, index ?? 0)
             case .tree: return API.treeList
+            case .treeArticleList(let page,_): return String(format: API.treeArticleList, page ?? 0)
             case .project: return API.projectTreeList
             case .projectArticle(let page,_): return String(format: API.projectArticleList, page ?? 0)
             case .coinUserInfo: return API.coinUserInfo
@@ -72,6 +75,7 @@ internal extension APIService{
                 return ["username":username,"password":password]
             case .collectList: return nil
             case .tree: return nil
+            case .treeArticleList(_, let cid): return ["cid":cid]
             case .project: return nil
             case .projectArticle(_,let cid): return ["cid":cid]
             case .coinUserInfo: return nil

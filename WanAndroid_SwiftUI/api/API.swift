@@ -81,7 +81,7 @@ struct API {
       /// 页码：拼接在链接上，从0开始
       ///******************************************************************/
 
-    static var treeArticleList = "/article/list/page/json";
+    static var treeArticleList = "/article/list/%d/json";
 
       /// **********************2.3 按照作者昵称搜索文章******************************
       /// 示例：https://wanandroid.com/article/list/0/json?author=鸿洋

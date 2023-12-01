@@ -67,6 +67,16 @@ class Const{
         return messageModel!;
     }
     
+    //6-TreeItem
+    func getTreeItem()->TreeItem{
+        let treeItemMapper = Mapper<TreeItem>()
+        let treeItemString = "{\"data\":[{\"articleList\":[],\"author\":\"\",\"children\":[{\"articleList\":[],\"author\":\"\",\"children\":[],\"courseId\":13,\"cover\":\"\",\"desc\":\"\",\"id\":60,\"lisense\":\"\",\"lisenseLink\":\"\",\"name\":\"Android Studio相关\",\"order\":1000,\"parentChapterId\":150,\"type\":0,\"userControlSetTop\":false,\"visible\":1}],\"courseId\":13,\"cover\":\"\",\"desc\":\"\",\"id\":150,\"lisense\":\"\",\"lisenseLink\":\"\",\"name\":\"开发环境\",\"order\":1,\"parentChapterId\":0,\"type\":0,\"userControlSetTop\":false,\"visible\":1}],\"errorCode\":0,\"errorMsg\":\"\"}";
+        
+        let treeItemModel = treeItemMapper.map(JSONString: treeItemString);
+        return treeItemModel!;
+        
+        
+    }
     
 }
 

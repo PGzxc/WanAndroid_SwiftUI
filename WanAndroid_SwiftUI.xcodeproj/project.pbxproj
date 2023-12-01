@@ -57,6 +57,9 @@
 		F3DA091D2A4203670089A7A6 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA091C2A4203670089A7A6 /* MessageItemView.swift */; };
 		F3DA091F2A4207530089A7A6 /* MessageItemReadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA091E2A4207530089A7A6 /* MessageItemReadBuilder.swift */; };
 		F3DA09212A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DA09202A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift */; };
+		F3DC38E22B18882E009DDD38 /* NavigationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DC38E12B18882E009DDD38 /* NavigationTabView.swift */; };
+		F3DC38E42B188AA1009DDD38 /* NavigationTabBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DC38E32B188AA1009DDD38 /* NavigationTabBuilder.swift */; };
+		F3DC38E62B188ACE009DDD38 /* NavigationTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DC38E52B188ACE009DDD38 /* NavigationTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +117,9 @@
 		F3DA091C2A4203670089A7A6 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
 		F3DA091E2A4207530089A7A6 /* MessageItemReadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemReadBuilder.swift; sourceTree = "<group>"; };
 		F3DA09202A42A04C0089A7A6 /* MessageItemUnReadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemUnReadBuilder.swift; sourceTree = "<group>"; };
+		F3DC38E12B18882E009DDD38 /* NavigationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabView.swift; sourceTree = "<group>"; };
+		F3DC38E32B188AA1009DDD38 /* NavigationTabBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabBuilder.swift; sourceTree = "<group>"; };
+		F3DC38E52B188ACE009DDD38 /* NavigationTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +313,7 @@
 				F3D5EE182A3C6A12000ACDFF /* view */,
 				F3D5EE132A3C566A000ACDFF /* viewmodel */,
 				F3D56E992A36CC4D008876F0 /* NavigationView.swift */,
+				F3DC38E12B18882E009DDD38 /* NavigationTabView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -354,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D5EE142A3C5687000ACDFF /* NavigationViewModel.swift */,
+				F3DC38E52B188ACE009DDD38 /* NavigationTabViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -362,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D5EE192A3C6A64000ACDFF /* NavigationSectionBuilder.swift */,
+				F3DC38E32B188AA1009DDD38 /* NavigationTabBuilder.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -585,7 +594,9 @@
 				F3BDCCDB2A37060500FC3CCD /* ModelProtocol.swift in Sources */,
 				F3D56EA42A36CC4D008876F0 /* TabBarView.swift in Sources */,
 				F392903A2A3DF6D200DCCFC9 /* ProjectSonModel.swift in Sources */,
+				F3DC38E42B188AA1009DDD38 /* NavigationTabBuilder.swift in Sources */,
 				F39290322A3D961D00DCCFC9 /* ProjectModel.swift in Sources */,
+				F3DC38E22B18882E009DDD38 /* NavigationTabView.swift in Sources */,
 				F3B87C5C2A3B16CD0072738D /* PlatformIndependentWebView.swift in Sources */,
 				F3B87C5B2A3B16CD0072738D /* LoadingWebView.swift in Sources */,
 				F3BDCCDD2A37063100FC3CCD /* ArticleModel.swift in Sources */,
@@ -596,6 +607,7 @@
 				F3D56EA52A36CC4D008876F0 /* MessageView.swift in Sources */,
 				F3DA09032A403FCB0089A7A6 /* LoginView.swift in Sources */,
 				F3DA09122A41F2590089A7A6 /* MessageReadView.swift in Sources */,
+				F3DC38E62B188ACE009DDD38 /* NavigationTabViewModel.swift in Sources */,
 				F3BDCCDF2A37076000FC3CCD /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
