@@ -156,6 +156,11 @@ ViewModel(MVVM设计模式):
 * 添加置顶文章接口和界面开发
 * ArticleItem界面更新(置顶标签、Title、content显示等)
 
+### v12.0-知识体系下的文章
+
+* 界面间跳转传递数据：( @State定义变量+ $selectTreeItem传递+ self.selectTreeItem = treeItem(点击复制))—直接传递出错(不变)
+* 接收到数据之后，在ViewModel中设置方法处理，并在onAppear中调用viewModel.set方法处理(比如遍历-设置值)
+
 ## 五 开发任务
 
 ### 5.1 已完成
