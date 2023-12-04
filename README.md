@@ -3,10 +3,10 @@
 
 
 ## 一 项目预览
-|![][swift-waz-1]| ![][swift-waz-2]|![][swift-waz-3] |![][swift-waz-4]|
-| -------------- | --------------- | --------------  | -------------- |
-|![][swift-waz-5]|![][swift-waz-6] |![][swift-waz-7] |![][swift-waz-8]|
-|![][swift-waz-9]|![][swift-waz-10]|![][swift-waz-11]|                |
+|![][swift-waz-1]| ![][swift-waz-2]|![][swift-waz-3] |![][swift-waz-4] |
+| -------------- | --------------- | --------------  | --------------  |
+|![][swift-waz-5]|![][swift-waz-6] |![][swift-waz-7] |![][swift-waz-8] |
+|![][swift-waz-9]|![][swift-waz-10]|![][swift-waz-11]|![][swift-waz-12]|
 
 ## 二 开发环境
 
@@ -69,16 +69,16 @@ ViewModel(MVVM设计模式):
 
 使用到的类库：
 
-* [Alamofire](https://github.com/Alamofire/Alamofire)：网络请求
-* [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper)：Alamofire的扩展，它使用ObjectMapper自动将JSON响应数据转换为swift对象
+* [Alamofire](https://githubfast.com/Alamofire/Alamofire)：网络请求
+* [AlamofireObjectMapper](https://githubfast.com/tristanhimmelman/AlamofireObjectMapper)：Alamofire的扩展，它使用ObjectMapper自动将JSON响应数据转换为swift对象
 
 ### v3.0-首页
 
 使用到的类库
 
-* 轮播图：[ImageCarousel](https://github.com/jisungs/ImageCarousel)
-* 网页：[WebViewProject-LoadingWebView](https://github.com/gahntpo/WebViewProject)
-* 网络图片：[SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI)
+* 轮播图：[ImageCarousel](https://githubfast.com/jisungs/ImageCarousel)
+* 网页：[WebViewProject-LoadingWebView](https://githubfast.com/gahntpo/WebViewProject)
+* 网络图片：[SDWebImageSwiftUI](https://githubfast.com/SDWebImage/SDWebImageSwiftUI)
 
 功能开发
 
@@ -148,7 +148,7 @@ ViewModel(MVVM设计模式):
 
 ### v10.0
 
-* 导入[WrappingHStack](https://github.com/dkk/WrappingHStack)自动换行库
+* 导入[WrappingHStack](https://githubfast.com/dkk/WrappingHStack)自动换行库
 * 重构导航布局页面
 
 ### v11.0
@@ -194,9 +194,9 @@ ViewModel(MVVM设计模式):
 * swiftUI练手项目，可能存在代码不规范等错误，如有错误还望指正
 
 
-[swift-waz-1]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-home-1.png
-[swift-waz-2]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-detail-2.png
-[swift-waz-3]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-tree-3.png
+[swift-waz-1]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-1-home.png
+[swift-waz-2]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-2-tree.png
+[swift-waz-3]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-3-treetab.png
 [swift-waz-4]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-project-4.png
 [swift-waz-5]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-message-unread-5.png
 [swift-waz-6]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-message-read-6.png
@@ -205,3 +205,4 @@ ViewModel(MVVM设计模式):
 [swift-waz-9]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-me-info-no-9.png
 [swift-waz-10]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-login-10.png
 [swift-waz-11]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-register-11.png
+[swift-waz-12]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/swiftui-waz-12-web.png
