@@ -14,6 +14,7 @@ struct ImageCarouseViewBuilder: View {
     @State private var goToNewView: Bool = false
     @State var banner:Banner? = nil
     @State var isModalPresented = false
+    @State var navigationTabPresented:Bool = false
     
     
     var body: some View {
@@ -26,14 +27,20 @@ struct ImageCarouseViewBuilder: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width,height: 250)
                     .clipped()
+                    .fullScreenCover(isPresented: $navigationTabPresented, content: {
+                        LoadingWebView(navigationTabPresented: $navigationTabPresented, url: URL(string: self.banner?.url ?? ""),title: self.banner?.title)
+//                        NavigationTabView(navigationTabPresented: $navigationTabPresented,
+//                                          selectTreeItem: $selectTreeItem)
+                    })
                     .onTapGesture {
+                        self.navigationTabPresented = true
                         self.banner = banner
                         self.isModalPresented.toggle()
                         //self.goToNewView.toggle()
                     }
-                    .sheet(isPresented: $isModalPresented){
-                        LoadingWebView(url: URL(string: self.banner?.url ?? ""))
-                    }
+//                    .sheet(isPresented: $isModalPresented){
+//                        LoadingWebView(url: URL(string: self.banner?.url ?? ""))
+//                    }
                 
             }
         }.frame(width: UIScreen.main.bounds.width, height: 250, alignment: .center)
@@ -41,7 +48,7 @@ struct ImageCarouseViewBuilder: View {
                 vm.getBannerModel()
             }
                 
-        NavigationLink(destination: LoadingWebView(url: URL(string: self.banner?.url ?? "")), isActive: self.$goToNewView) { EmptyView() }
+//        NavigationLink(destination: LoadingWebView(url: URL(string: self.banner?.url ?? "")), isActive: self.$goToNewView) { EmptyView() }
     }
 }
 

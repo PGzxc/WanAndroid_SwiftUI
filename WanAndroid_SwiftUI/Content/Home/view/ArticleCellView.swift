@@ -15,14 +15,20 @@ struct ArticleCellView: View{
     @Binding var article:Article
     @State private var goToNewView: Bool = false
     @State var isModalPresented = false
+    @State var navigationTabPresented:Bool = false
     
     var body: some View{
         
-        articleView.onTapGesture {
+        articleView.fullScreenCover(isPresented: $navigationTabPresented, content: {
+            LoadingWebView(navigationTabPresented: $navigationTabPresented, url: URL(string: article.link ?? ""),title: article.title)
+
+        }).onTapGesture {
+            self.navigationTabPresented = true
             self.isModalPresented.toggle()
-        } .sheet(isPresented: $isModalPresented){
-            LoadingWebView(url: URL(string: article.link ?? ""))
-        }
+        } 
+//            .sheet(isPresented: $isModalPresented){
+//            LoadingWebView(url: URL(string: article.link ?? ""))
+//        }
         
         //NavigationLink(destination: LoadingWebView(url: URL(string: article.link ?? "")), label: { articleView  })
         

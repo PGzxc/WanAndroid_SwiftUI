@@ -11,15 +11,23 @@ struct MessageItemView: View {
     
     @Binding var message: Message
     @State var isModalPresented = false
+    @State var navigationTabPresented:Bool = false
     
     var body: some View {
         //messageItemView
         
-        messageItemView.onTapGesture {
+        messageItemView
+            .fullScreenCover(isPresented: $navigationTabPresented, content: {
+                LoadingWebView(navigationTabPresented: $navigationTabPresented, url: URL(string: message.fullLink ?? ""),title: message.title)
+
+            })
+            .onTapGesture {
             self.isModalPresented.toggle()
-        } .sheet(isPresented: $isModalPresented){
-            LoadingWebView(url: URL(string: message.fullLink ?? ""))
+            self.navigationTabPresented = true
         }
+//        .sheet(isPresented: $isModalPresented){
+//            LoadingWebView(url: URL(string: message.fullLink ?? ""))
+//        }
     }
     //消息item
     var messageItemView: some View{
