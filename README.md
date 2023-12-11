@@ -193,6 +193,11 @@ ViewModel(MVVM设计模式):
 
 * 剩余接口
 
+
+参考依赖
+* [Refresh](https://github.com/wxxsw/Refresh)
+* [swiftui-pull-to-refresh](https://github.com/globulus/swiftui-pull-to-refresh)
+
 ## 六 备注
 
 * 本项目按照：接口(API)+视图(组件、布局)+逻辑处理(ViewModel)+接口返回数据(Model)的模式进行开发
