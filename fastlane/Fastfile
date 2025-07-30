@@ -21,7 +21,7 @@ platform :ios do
     gym(
       workspace: "WanAndroid_SwiftUI.xcworkspace",
       scheme: "WanAndroid_SwiftUI",
-      export_method: "development",
+      export_method: "ad-hoc",
       export_options: {
         signingStyle: "automatic",
         compileBitcode: false
