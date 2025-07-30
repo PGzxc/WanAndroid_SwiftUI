@@ -1,0 +1,41 @@
+name: Build iOS IPA
+
+on:
+  push:
+    tags:
+      - 'v*'  # 监听以 v 开头的 tag，比如 v1.0.0
+
+permissions:
+  contents: write  # ✅ 允许上传 Release 资源
+
+jobs:
+  build:
+    name: Build and Upload IPA
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby and Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+
+      - name: Install Fastlane
+        run: gem install fastlane  # ✅ 建议不要再装 bundler，除非你用 Gemfile
+
+      - name: Install CocoaPods & Dependencies
+        run: |
+          brew install cocoapods
+          pod install
+
+      - name: Build IPA using Fastlane
+        run: fastlane build  # 确保你本地能生成 ./build/WanAndroid_SwiftUI.ipa
+
+      - name: Upload IPA to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./build/WanAndroid_SwiftUI.ipa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
